@@ -1,0 +1,12 @@
+[
+  "function addToWhitelist(address)",
+  "function balances(address) view returns (uint256)",
+  "function deposit() payable",
+  "function execute(address,uint256,bytes) payable",
+  "function init(uint256)",
+  "function maxBalance() view returns (uint256)",
+  "function multicall(bytes[]) payable",
+  "function owner() view returns (address)",
+  "function setMaxBalance(uint256)",
+  "function whitelisted(address) view returns (bool)"
+]

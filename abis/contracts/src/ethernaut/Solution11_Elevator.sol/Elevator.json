@@ -1,0 +1,5 @@
+[
+  "function floor() view returns (uint256)",
+  "function goTo(uint256)",
+  "function top() view returns (bool)"
+]

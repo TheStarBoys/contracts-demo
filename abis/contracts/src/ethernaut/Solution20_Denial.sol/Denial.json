@@ -1,0 +1,7 @@
+[
+  "function contractBalance() view returns (uint256)",
+  "function owner() view returns (address)",
+  "function partner() view returns (address)",
+  "function setWithdrawPartner(address)",
+  "function withdraw()"
+]

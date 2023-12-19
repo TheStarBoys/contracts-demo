@@ -1,0 +1,4 @@
+[
+  "function hack(address)",
+  "function price() view returns (uint256)"
+]

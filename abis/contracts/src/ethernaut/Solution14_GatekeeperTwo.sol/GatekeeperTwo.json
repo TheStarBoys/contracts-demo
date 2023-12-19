@@ -1,0 +1,4 @@
+[
+  "function enter(bytes8) returns (bool)",
+  "function entrant() view returns (address)"
+]

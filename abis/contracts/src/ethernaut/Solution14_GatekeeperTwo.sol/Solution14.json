@@ -1,0 +1,6 @@
+[
+  "constructor(address)",
+  "function genGateKey(address) pure returns (bytes8)",
+  "function testXOR(uint256,uint256) pure returns (uint256)",
+  "function verifyKey(bytes8,address) pure returns (bool)"
+]

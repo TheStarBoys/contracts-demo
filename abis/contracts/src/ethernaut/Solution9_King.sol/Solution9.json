@@ -1,0 +1,5 @@
+[
+  "function balance() view returns (uint256)",
+  "function hack1(address) payable returns (bool)",
+  "function hack2(address) payable returns (bool)"
+]

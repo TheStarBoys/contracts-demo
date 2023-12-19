@@ -1,0 +1,7 @@
+[
+  "constructor(address)",
+  "function balance() view returns (uint256)",
+  "function hack() payable",
+  "function target() view returns (address)",
+  "function targetETHBalance() view returns (uint256)"
+]

@@ -1,0 +1,13 @@
+[
+  "function calcFromAmount(uint256,uint256,uint256) pure returns (uint256)",
+  "function calcMaxFromAmount(uint256,uint256,uint256) pure returns (uint256)",
+  "function calcToAmount(uint256,uint256,uint256) pure returns (uint256)",
+  "function hack(address)",
+  "function hackMock()",
+  "function swap1(uint256) returns (uint256)",
+  "function swap2(uint256) returns (uint256)",
+  "function token1Bal() view returns (uint256)",
+  "function token1UserBal() view returns (uint256)",
+  "function token2Bal() view returns (uint256)",
+  "function token2UserBal() view returns (uint256)"
+]

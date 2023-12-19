@@ -1,0 +1,4 @@
+[
+  "function consecutiveWins(address) view returns (uint256)",
+  "function hack(address)"
+]

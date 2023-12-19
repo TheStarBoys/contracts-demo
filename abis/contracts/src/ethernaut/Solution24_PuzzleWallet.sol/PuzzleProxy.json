@@ -1,0 +1,12 @@
+[
+  "constructor(address,address,bytes)",
+  "error AddressEmptyCode(address)",
+  "error ERC1967InvalidImplementation(address)",
+  "error ERC1967NonPayable()",
+  "error FailedInnerCall()",
+  "event Upgraded(address indexed)",
+  "function admin() view returns (address)",
+  "function approveNewAdmin(address)",
+  "function pendingAdmin() view returns (address)",
+  "function proposeNewAdmin(address)"
+]

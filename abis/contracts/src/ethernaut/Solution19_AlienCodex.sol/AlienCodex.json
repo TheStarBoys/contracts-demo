@@ -1,0 +1,16 @@
+[
+  "constructor()",
+  "error OwnableInvalidOwner(address)",
+  "error OwnableUnauthorizedAccount(address)",
+  "event OwnershipTransferred(address indexed,address indexed)",
+  "function codex(uint256) view returns (bytes32)",
+  "function codexLength() view returns (uint256)",
+  "function contact() view returns (bool)",
+  "function make_contact()",
+  "function owner() view returns (address)",
+  "function record(bytes32)",
+  "function renounceOwnership()",
+  "function retract()",
+  "function revise(uint256,bytes32)",
+  "function transferOwnership(address)"
+]

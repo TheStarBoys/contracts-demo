@@ -1,0 +1,6 @@
+[
+  "constructor()",
+  "function createWallet() payable",
+  "function walletImplement() view returns (address)",
+  "function wallets(uint256) view returns (address)"
+]

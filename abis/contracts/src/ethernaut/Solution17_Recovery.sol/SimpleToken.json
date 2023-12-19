@@ -1,0 +1,7 @@
+[
+  "constructor(string,address,uint256)",
+  "function balances(address) view returns (uint256)",
+  "function destroy(address)",
+  "function name() view returns (string)",
+  "function transfer(address,uint256)"
+]

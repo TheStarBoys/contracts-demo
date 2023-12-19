@@ -1,0 +1,5 @@
+[
+  "function buy()",
+  "function isSold() view returns (bool)",
+  "function price() view returns (uint256)"
+]

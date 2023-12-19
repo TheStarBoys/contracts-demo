@@ -1,0 +1,8 @@
+[
+  "constructor(address,address)",
+  "function owner() view returns (address)",
+  "function setFirstTime(uint256)",
+  "function setSecondTime(uint256)",
+  "function timeZone1Library() view returns (address)",
+  "function timeZone2Library() view returns (address)"
+]

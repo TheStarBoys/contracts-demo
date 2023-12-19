@@ -1,0 +1,6 @@
+[
+  "function balanceOf(address) view returns (uint256)",
+  "function balances(address) view returns (uint256)",
+  "function donate(address) payable",
+  "function withdraw(uint256)"
+]

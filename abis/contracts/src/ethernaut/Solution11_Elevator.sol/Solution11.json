@@ -1,0 +1,4 @@
+[
+  "function hack(address,uint256)",
+  "function isLastFloor(uint256) returns (bool)"
+]
