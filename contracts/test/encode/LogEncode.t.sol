@@ -10,7 +10,7 @@ import "../../src/encode/LogEncode.sol";
 contract LogEncodeTest is Test {
     LogEncode logEncode;
 
-    event LogToBeEncode(address indexed sender, string indexed value, uint256 value1);
+    event LogToBeEncoded(address indexed sender, string indexed value, uint256 value1);
 
     function setUp() public {
         logEncode = new LogEncode();
@@ -20,9 +20,9 @@ contract LogEncodeTest is Test {
         vm.recordLogs();
 
         vm.expectEmit(true, true, true, true);
-        emit LogToBeEncode(address(this), "123", 456);
+        emit LogToBeEncoded(address(this), "123", 456);
 
-        logEncode.logToBeEncode0("123", 456);
+        logEncode.logToBeEncoded0("123", 456);
 
         // This is only for debuging.
         // Vm.Log[] memory logs = vm.getRecordedLogs();
@@ -35,8 +35,8 @@ contract LogEncodeTest is Test {
         // }
 
         vm.expectEmit(true, true, true, true);
-        emit LogToBeEncode(address(this), "123", 456);
+        emit LogToBeEncoded(address(this), "123", 456);
 
-        logEncode.logToBeEncode1("123", 456);
+        logEncode.logToBeEncoded1("123", 456);
     }
 }

@@ -5,14 +5,14 @@ contract LogEncode {
     // Event encoding spec is here:
     // https://docs.soliditylang.org/en/v0.8.23/abi-spec.html#indexed-event-encoding
     // https://docs.soliditylang.org/en/v0.8.23/abi-spec.html#events
-    event LogToBeEncode(address indexed sender, string indexed value, uint256 value1);
+    event LogToBeEncoded(address indexed sender, string indexed value, uint256 value1);
 
-    function logToBeEncode0(string memory _value, uint256 _value1) public {
-        emit LogToBeEncode(msg.sender, _value, _value1);
+    function logToBeEncoded0(string memory _value, uint256 _value1) public {
+        emit LogToBeEncoded(msg.sender, _value, _value1);
     }
 
-    function logToBeEncode1(string memory _value, uint256 _value1) public {
-        log(keccak256("LogToBeEncode(address,string,uint256)"), encode2Bytes32(msg.sender), encode2Bytes32(_value), abi.encode(_value1));
+    function logToBeEncoded1(string memory _value, uint256 _value1) public {
+        log(keccak256("LogToBeEncoded(address,string,uint256)"), encode2Bytes32(msg.sender), encode2Bytes32(_value), abi.encode(_value1));
     }
 
     function encode2Bytes32(address addr) public pure returns (bytes32) {
