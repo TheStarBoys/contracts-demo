@@ -12,19 +12,34 @@ contract LogEncode {
     }
 
     function logToBeEncoded1(string memory _value, uint256 _value1) public {
-        log(keccak256("LogToBeEncoded(address,string,uint256)"), encode2Bytes32(msg.sender), encode2Bytes32(_value), abi.encode(_value1));
+        log(keccak256("LogToBeEncoded(address,string,uint256)"), encode2Topic(msg.sender), encode2Topic(_value), abi.encode(_value1));
     }
 
-    function encode2Bytes32(address addr) public pure returns (bytes32) {
+    // uintNN / intNN are padded on the left.
+    function encode2Topic(address addr) public pure returns (bytes32) {
         return bytes32(uint256(uint160(addr)));
     }
 
-    function encode2Bytes32(uint256 v) public pure returns (bytes32) {
+    // bytesNN types are padded on the right
+    function encode2Topic(bytes8 b) public pure returns (bytes32) {
+        return bytes32(b);
+    }
+
+    function encode2Topic(uint256 v) public pure returns (bytes32) {
         return bytes32(v);
     }
 
-    function encode2Bytes32(string memory s) public pure returns (bytes32) {
+    // the encoding of a bytes and string value is just the string contents without
+    // any padding or length prefix.
+    // the encoding of an array (both dynamically- and statically-sized) is
+    // the concatenation of the encoding of its elements, always padded to
+    // a multiple of 32 bytes (even bytes and string) and without any length prefix
+    function encode2Topic(string memory s) public pure returns (bytes32) {
         return keccak256(abi.encodePacked(bytes(s)));
+    }
+
+    function encode2Topic(bytes memory b) public pure returns (bytes32) {
+        return keccak256(abi.encodePacked(b));
     }
 
     function log(bytes memory data) public {
