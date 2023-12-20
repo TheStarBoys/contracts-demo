@@ -16,7 +16,8 @@ contract ErrorEncodeTest is Test {
         errEncode = new ErrorEncode();
     }
 
-    function test_Encode() public {
+    function testFuzz_Encode(uint256 _a, string memory _b, uint256[] memory _c) public {
+        errEncode.initialize(_a, _b, _c);
         vm.expectRevert(errEncode.encodeError());
         errEncode.triggerError();
 

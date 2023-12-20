@@ -8,11 +8,10 @@ contract ErrorEncode {
     string b;
     uint256[] c;
 
-    constructor() {
-        a = 123456789;
-        b = "Hello, World";
-        c.push(1);
-        c.push(666666);
+    function initialize(uint256 _a, string memory _b, uint256[] memory _c) public {
+        a = _a;
+        b = _b;
+        c = _c;
     }
     
     function triggerError() public view {
