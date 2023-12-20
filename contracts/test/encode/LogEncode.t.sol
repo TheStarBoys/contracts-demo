@@ -16,7 +16,7 @@ contract LogEncodeTest is Test {
         logEncode = new LogEncode();
     }
 
-    function test_encode() public {
+    function test_Encode() public {
         vm.recordLogs();
 
         vm.expectEmit(true, true, true, true);

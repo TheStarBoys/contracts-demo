@@ -1,0 +1,6 @@
+[
+  "constructor()",
+  "error ErrorToBeEncoded(uint256,string,uint256[])",
+  "function triggerError() view",
+  "function triggerErrorByEncoding() view"
+]
