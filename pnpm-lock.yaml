@@ -12,8 +12,8 @@ devDependencies:
     specifier: 0.0.1-beta.1
     version: 0.0.1-beta.1(ethers@6.9.0)(zksync-ethers@6.0.0)
   '@matterlabs/hardhat-zksync-solc':
-    specifier: ^1.0.5
-    version: 1.0.5(hardhat@2.19.2)
+    specifier: ^1.0.6
+    version: 1.0.6(hardhat@2.19.2)
   '@matterlabs/hardhat-zksync-verify':
     specifier: ^1.2.1
     version: 1.2.1(@nomicfoundation/hardhat-verify@2.0.2)(ethers@6.9.0)(hardhat@2.19.2)
@@ -740,7 +740,7 @@ packages:
       hardhat: ^2.18.1
       zksync-ethers: ^6.0.0
     dependencies:
-      '@matterlabs/hardhat-zksync-solc': 1.0.5(hardhat@2.19.2)
+      '@matterlabs/hardhat-zksync-solc': 1.0.6(hardhat@2.19.2)
       chalk: 4.1.2
       ethers: 6.9.0
       hardhat: 2.19.2(ts-node@10.9.2)(typescript@5.3.3)
@@ -762,10 +762,10 @@ packages:
       zksync-ethers: 6.0.0(ethers@6.9.0)
     dev: true
 
-  /@matterlabs/hardhat-zksync-solc@1.0.5(hardhat@2.19.2):
-    resolution: {integrity: sha512-IBWvbGJSISNtWIz/4VBfV1NweVYK7xHmy787o6fDjntxP5P4XEklTJU3/pNBQdL5fZbIrQqMmXFMOwUXnuEY6Q==}
+  /@matterlabs/hardhat-zksync-solc@1.0.6(hardhat@2.19.2):
+    resolution: {integrity: sha512-0icYSufXba/Bbb7v2iXuZJ+IbYsiNpR4Wy6UizHnGuFw3OMHgh+saebQphuaN9yyRL2UPGZbPkQFHWBLZj5/xQ==}
     peerDependencies:
-      hardhat: ^2.18.1
+      hardhat: ^2.19.2
     dependencies:
       '@nomiclabs/hardhat-docker': 2.0.2
       chalk: 4.1.2
@@ -784,7 +784,7 @@ packages:
     peerDependencies:
       '@nomicfoundation/hardhat-verify': ^2.0.0
     dependencies:
-      '@matterlabs/hardhat-zksync-solc': 1.0.5(hardhat@2.19.2)
+      '@matterlabs/hardhat-zksync-solc': 1.0.6(hardhat@2.19.2)
       '@nomicfoundation/hardhat-verify': 2.0.2(hardhat@2.19.2)
       axios: 1.6.2(debug@4.3.4)
       chalk: 4.1.2
