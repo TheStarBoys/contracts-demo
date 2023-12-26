@@ -16,13 +16,13 @@ contract LogEncodeTest is Test {
         logEncode = new LogEncode();
     }
 
-    function test_encode() public {
+    function test_Encode(string memory v0, uint v1) public {
         vm.recordLogs();
 
         vm.expectEmit(true, true, true, true);
-        emit LogToBeEncoded(address(this), "123", 456);
+        emit LogToBeEncoded(address(this), v0, v1);
 
-        logEncode.logToBeEncoded0("123", 456);
+        logEncode.logToBeEncoded0(v0, v1);
 
         // This is only for debuging.
         // Vm.Log[] memory logs = vm.getRecordedLogs();
@@ -35,8 +35,8 @@ contract LogEncodeTest is Test {
         // }
 
         vm.expectEmit(true, true, true, true);
-        emit LogToBeEncoded(address(this), "123", 456);
+        emit LogToBeEncoded(address(this), v0, v1);
 
-        logEncode.logToBeEncoded1("123", 456);
+        logEncode.logToBeEncoded1(v0, v1);
     }
 }
