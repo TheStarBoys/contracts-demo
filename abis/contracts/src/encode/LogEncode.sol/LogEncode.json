@@ -1,10 +1,5 @@
 [
   "event LogToBeEncoded(address indexed,string indexed,uint256)",
-  "function encode2Topic(address) pure returns (bytes32)",
-  "function encode2Topic(string) pure returns (bytes32)",
-  "function encode2Topic(uint256) pure returns (bytes32)",
-  "function encode2Topic(bytes) pure returns (bytes32)",
-  "function encode2Topic(bytes8) pure returns (bytes32)",
   "function log(bytes)",
   "function log(bytes32,bytes32,bytes32,bytes32,bytes)",
   "function log(bytes32,bytes32,bytes32,bytes)",
