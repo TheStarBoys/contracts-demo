@@ -1,7 +1,11 @@
 [
   "function log(bytes)",
+  "function log(bytes32)",
+  "function log(bytes32,bytes32)",
   "function log(bytes32,bytes32,bytes32,bytes32,bytes)",
+  "function log(bytes32,bytes32,bytes32)",
   "function log(bytes32,bytes32,bytes32,bytes)",
   "function log(bytes32,bytes)",
+  "function log(bytes32,bytes32,bytes32,bytes32)",
   "function log(bytes32,bytes32,bytes)"
 ]

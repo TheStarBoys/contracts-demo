@@ -1,9 +1,13 @@
 [
   "event LogToBeEncoded(address indexed,string indexed,uint256)",
   "function log(bytes)",
+  "function log(bytes32)",
+  "function log(bytes32,bytes32)",
   "function log(bytes32,bytes32,bytes32,bytes32,bytes)",
+  "function log(bytes32,bytes32,bytes32)",
   "function log(bytes32,bytes32,bytes32,bytes)",
   "function log(bytes32,bytes)",
+  "function log(bytes32,bytes32,bytes32,bytes32)",
   "function log(bytes32,bytes32,bytes)",
   "function logToBeEncoded0(string,uint256)",
   "function logToBeEncoded1(string,uint256)"

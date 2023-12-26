@@ -14,9 +14,21 @@ contract LogEmitter {
         }
     }
 
+    function log(bytes32 topic1) public {
+        assembly {
+            log1(0x0, 0x0, topic1)
+        }
+    }
+
     function log(bytes32 topic1, bytes32 topic2, bytes memory data) public {
         assembly {
             log2(add(data, 0x20), mload(data), topic1, topic2)
+        }
+    }
+
+    function log(bytes32 topic1, bytes32 topic2) public {
+        assembly {
+            log2(0x0, 0x0, topic1, topic2)
         }
     }
 
@@ -27,9 +39,22 @@ contract LogEmitter {
         }
     }
 
+    function log(bytes32 topic1, bytes32 topic2, bytes32 topic3) public
+    {
+        assembly {
+            log3(0x0, 0x0, topic1, topic2, topic3)
+        }
+    }
+
     function log(bytes32 topic1, bytes32 topic2, bytes32 topic3, bytes32 topic4, bytes memory data) public {
         assembly {
             log4(add(data, 0x20), mload(data), topic1, topic2, topic3, topic4)
+        }
+    }
+
+    function log(bytes32 topic1, bytes32 topic2, bytes32 topic3, bytes32 topic4) public {
+        assembly {
+            log4(0x0, 0x0, topic1, topic2, topic3, topic4)
         }
     }
 }

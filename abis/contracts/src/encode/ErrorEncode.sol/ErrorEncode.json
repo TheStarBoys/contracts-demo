@@ -1,7 +1,7 @@
 [
-  "constructor(uint256,string,uint256[])",
   "error ErrorToBeEncoded(uint256,string,uint256[])",
   "function encodeError() view returns (bytes)",
+  "function initialize(uint256,string,uint256[])",
   "function triggerError() view",
   "function triggerErrorByEncoding() view"
 ]

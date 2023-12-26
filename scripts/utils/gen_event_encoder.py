@@ -119,6 +119,7 @@ test_funcs = map(lambda v: f"""
     event EncodeLog0_{v[0]} ({v[0]} v) anonymous;
     event EncodeLog1_{v[0]}({v[0]} v);
     event EncodeLog2_{v[0]}({v[0]} indexed t, {v[0]} v);
+    event EncodeLog2WithoutData_{v[0]}({v[0]} indexed t);
 
     function test_EncodeLog0_{v[0]}({v[1]} v) public {{
         vm.recordLogs();
@@ -154,6 +155,22 @@ test_funcs = map(lambda v: f"""
         emit EncodeLog2_{v[0]}(t, v);
 
         emitter.log(EncodeLog2_{v[0]}.selector, t.topic(), v.data());
+
+        Vm.Log[] memory logs = vm.getRecordedLogs();
+        assertEq(logs.length, 2);
+        for (uint i; i < logs[0].topics.length; i++) {{
+            assertEq(logs[0].topics[i], logs[1].topics[i]);
+        }}
+
+        assertEq(logs[0].data, logs[1].data);
+    }}
+
+    function test_EncodeLog2WithoutData_{v[0]}({v[1]} t) public {{
+        vm.recordLogs();
+
+        emit EncodeLog2WithoutData_{v[0]}(t);
+
+        emitter.log(EncodeLog2WithoutData_{v[0]}.selector, t.topic());
 
         Vm.Log[] memory logs = vm.getRecordedLogs();
         assertEq(logs.length, 2);
