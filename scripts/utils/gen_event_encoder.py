@@ -20,7 +20,7 @@ bytes_funcs = ["bytes" + str(n) for n in range(type_start, 33)]
 types += bytes_funcs
 
 bytes_funcs = map(lambda v: '''
-    function topic({} b) public pure returns (bytes32) {{
+    function topic({} b) internal pure returns (bytes32) {{
         return bytes32(b);
     }}
 '''.format(v), bytes_funcs)
@@ -34,7 +34,7 @@ uint_funcs = ["uint" + str(8*step) for step in range(type_start, 33)]
 types += uint_funcs
 
 uint_funcs = map(lambda v: '''
-    function topic({} v) public pure returns (bytes32) {{
+    function topic({} v) internal pure returns (bytes32) {{
         return bytes32(uint256(v));
     }}
 '''.format(v), uint_funcs)
@@ -48,7 +48,7 @@ types += int_funcs
 arguments_types = [v + " calldata" if 'bytes' == v or 'string' == v else v for v in types]
 
 int_funcs = map(lambda v: '''
-    function topic({} v) public pure returns (bytes32) {{
+    function topic({} v) internal pure returns (bytes32) {{
         return bytes32(uint256(int256(v)));
     }}
 '''.format(v), int_funcs)
@@ -61,7 +61,7 @@ using_for = '\n'.join(['using LogEncoder for {} global;'.format(v) for v in usin
 # print(using_for)
 
 data_funcs = map(lambda v: '''
-    function data({} v) public pure returns (bytes memory) {{
+    function data({} v) internal pure returns (bytes memory) {{
         return abi.encode(v);
     }}
 '''.format(v + " calldata" if 'bytes' == v or 'string' == v else v), types)
@@ -74,11 +74,11 @@ pragma solidity ^0.8.21;
 // https://docs.soliditylang.org/en/v0.8.23/abi-spec.html#indexed-event-encoding
 // https://docs.soliditylang.org/en/v0.8.23/abi-spec.html#events
 library LogEncoder {{    
-    function topic(address addr) public pure returns (bytes32) {{
+    function topic(address addr) internal pure returns (bytes32) {{
         return bytes32(uint256(uint160(addr)));
     }}
 
-    function topic(bool v) public pure returns(bytes32) {{
+    function topic(bool v) internal pure returns(bytes32) {{
         return bytes32(uint(v ? 1 : 0));
     }}
 
@@ -87,11 +87,11 @@ library LogEncoder {{
     // the encoding of an array (both dynamically- and statically-sized) is
     // the concatenation of the encoding of its elements, always padded to
     // a multiple of 32 bytes (even bytes and string) and without any length prefix
-    function topic(string calldata s) public pure returns (bytes32) {{
+    function topic(string memory s) internal pure returns (bytes32) {{
         return keccak256(abi.encodePacked(bytes(s)));
     }}
 
-    function topic(bytes calldata b) public pure returns (bytes32) {{
+    function topic(bytes memory b) internal pure returns (bytes32) {{
         return keccak256(abi.encodePacked(b));
     }}
 
