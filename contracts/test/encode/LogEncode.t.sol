@@ -16,7 +16,7 @@ contract LogEncodeTest is Test {
         logEncode = new LogEncode();
     }
 
-    function test_Encode(string memory v0, uint v1) public {
+    function testFuzz_Encode(string memory v0, uint v1) public {
         vm.recordLogs();
 
         vm.expectEmit(true, true, true, true);

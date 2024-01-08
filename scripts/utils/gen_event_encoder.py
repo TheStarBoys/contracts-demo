@@ -121,7 +121,7 @@ test_funcs = map(lambda v: f"""
     event EncodeLog2_{v[0]}({v[0]} indexed t, {v[0]} v);
     event EncodeLog2WithoutData_{v[0]}({v[0]} indexed t);
 
-    function test_EncodeLog0_{v[0]}({v[1]} v) public {{
+    function testFuzz_EncodeLog0_{v[0]}({v[1]} v) public {{
         vm.recordLogs();
 
         emit EncodeLog0_{v[0]}(v);
@@ -133,7 +133,7 @@ test_funcs = map(lambda v: f"""
         assertEq(logs[0].data, logs[1].data);
     }}
 
-    function test_EncodeLog1_{v[0]}({v[1]} v) public {{
+    function testFuzz_EncodeLog1_{v[0]}({v[1]} v) public {{
         vm.recordLogs();
 
         emit EncodeLog1_{v[0]}(v);
@@ -149,7 +149,7 @@ test_funcs = map(lambda v: f"""
         assertEq(logs[0].data, logs[1].data);
     }}
 
-    function test_EncodeLog2_{v[0]}({v[1]} t, {v[1]} v) public {{
+    function testFuzz_EncodeLog2_{v[0]}({v[1]} t, {v[1]} v) public {{
         vm.recordLogs();
 
         emit EncodeLog2_{v[0]}(t, v);
@@ -165,7 +165,7 @@ test_funcs = map(lambda v: f"""
         assertEq(logs[0].data, logs[1].data);
     }}
 
-    function test_EncodeLog2WithoutData_{v[0]}({v[1]} t) public {{
+    function testFuzz_EncodeLog2WithoutData_{v[0]}({v[1]} t) public {{
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_{v[0]}(t);

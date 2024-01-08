@@ -23,7 +23,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes(bytes indexed t, bytes v);
     event EncodeLog2WithoutData_bytes(bytes indexed t);
 
-    function test_EncodeLog0_bytes(bytes calldata v) public {
+    function testFuzz_EncodeLog0_bytes(bytes calldata v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes(v);
@@ -35,7 +35,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes(bytes calldata v) public {
+    function testFuzz_EncodeLog1_bytes(bytes calldata v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes(v);
@@ -51,7 +51,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes(bytes calldata t, bytes calldata v) public {
+    function testFuzz_EncodeLog2_bytes(bytes calldata t, bytes calldata v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes(t, v);
@@ -67,7 +67,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes(bytes calldata t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes(bytes calldata t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes(t);
@@ -88,7 +88,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_string(string indexed t, string v);
     event EncodeLog2WithoutData_string(string indexed t);
 
-    function test_EncodeLog0_string(string calldata v) public {
+    function testFuzz_EncodeLog0_string(string calldata v) public {
         vm.recordLogs();
 
         emit EncodeLog0_string(v);
@@ -100,7 +100,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_string(string calldata v) public {
+    function testFuzz_EncodeLog1_string(string calldata v) public {
         vm.recordLogs();
 
         emit EncodeLog1_string(v);
@@ -116,7 +116,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_string(string calldata t, string calldata v) public {
+    function testFuzz_EncodeLog2_string(string calldata t, string calldata v) public {
         vm.recordLogs();
 
         emit EncodeLog2_string(t, v);
@@ -132,7 +132,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_string(string calldata t) public {
+    function testFuzz_EncodeLog2WithoutData_string(string calldata t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_string(t);
@@ -153,7 +153,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bool(bool indexed t, bool v);
     event EncodeLog2WithoutData_bool(bool indexed t);
 
-    function test_EncodeLog0_bool(bool v) public {
+    function testFuzz_EncodeLog0_bool(bool v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bool(v);
@@ -165,7 +165,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bool(bool v) public {
+    function testFuzz_EncodeLog1_bool(bool v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bool(v);
@@ -181,7 +181,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bool(bool t, bool v) public {
+    function testFuzz_EncodeLog2_bool(bool t, bool v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bool(t, v);
@@ -197,7 +197,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bool(bool t) public {
+    function testFuzz_EncodeLog2WithoutData_bool(bool t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bool(t);
@@ -218,7 +218,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_address(address indexed t, address v);
     event EncodeLog2WithoutData_address(address indexed t);
 
-    function test_EncodeLog0_address(address v) public {
+    function testFuzz_EncodeLog0_address(address v) public {
         vm.recordLogs();
 
         emit EncodeLog0_address(v);
@@ -230,7 +230,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_address(address v) public {
+    function testFuzz_EncodeLog1_address(address v) public {
         vm.recordLogs();
 
         emit EncodeLog1_address(v);
@@ -246,7 +246,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_address(address t, address v) public {
+    function testFuzz_EncodeLog2_address(address t, address v) public {
         vm.recordLogs();
 
         emit EncodeLog2_address(t, v);
@@ -262,7 +262,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_address(address t) public {
+    function testFuzz_EncodeLog2WithoutData_address(address t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_address(t);
@@ -283,7 +283,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes1(bytes1 indexed t, bytes1 v);
     event EncodeLog2WithoutData_bytes1(bytes1 indexed t);
 
-    function test_EncodeLog0_bytes1(bytes1 v) public {
+    function testFuzz_EncodeLog0_bytes1(bytes1 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes1(v);
@@ -295,7 +295,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes1(bytes1 v) public {
+    function testFuzz_EncodeLog1_bytes1(bytes1 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes1(v);
@@ -311,7 +311,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes1(bytes1 t, bytes1 v) public {
+    function testFuzz_EncodeLog2_bytes1(bytes1 t, bytes1 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes1(t, v);
@@ -327,7 +327,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes1(bytes1 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes1(bytes1 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes1(t);
@@ -348,7 +348,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes2(bytes2 indexed t, bytes2 v);
     event EncodeLog2WithoutData_bytes2(bytes2 indexed t);
 
-    function test_EncodeLog0_bytes2(bytes2 v) public {
+    function testFuzz_EncodeLog0_bytes2(bytes2 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes2(v);
@@ -360,7 +360,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes2(bytes2 v) public {
+    function testFuzz_EncodeLog1_bytes2(bytes2 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes2(v);
@@ -376,7 +376,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes2(bytes2 t, bytes2 v) public {
+    function testFuzz_EncodeLog2_bytes2(bytes2 t, bytes2 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes2(t, v);
@@ -392,7 +392,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes2(bytes2 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes2(bytes2 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes2(t);
@@ -413,7 +413,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes3(bytes3 indexed t, bytes3 v);
     event EncodeLog2WithoutData_bytes3(bytes3 indexed t);
 
-    function test_EncodeLog0_bytes3(bytes3 v) public {
+    function testFuzz_EncodeLog0_bytes3(bytes3 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes3(v);
@@ -425,7 +425,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes3(bytes3 v) public {
+    function testFuzz_EncodeLog1_bytes3(bytes3 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes3(v);
@@ -441,7 +441,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes3(bytes3 t, bytes3 v) public {
+    function testFuzz_EncodeLog2_bytes3(bytes3 t, bytes3 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes3(t, v);
@@ -457,7 +457,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes3(bytes3 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes3(bytes3 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes3(t);
@@ -478,7 +478,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes4(bytes4 indexed t, bytes4 v);
     event EncodeLog2WithoutData_bytes4(bytes4 indexed t);
 
-    function test_EncodeLog0_bytes4(bytes4 v) public {
+    function testFuzz_EncodeLog0_bytes4(bytes4 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes4(v);
@@ -490,7 +490,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes4(bytes4 v) public {
+    function testFuzz_EncodeLog1_bytes4(bytes4 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes4(v);
@@ -506,7 +506,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes4(bytes4 t, bytes4 v) public {
+    function testFuzz_EncodeLog2_bytes4(bytes4 t, bytes4 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes4(t, v);
@@ -522,7 +522,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes4(bytes4 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes4(bytes4 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes4(t);
@@ -543,7 +543,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes5(bytes5 indexed t, bytes5 v);
     event EncodeLog2WithoutData_bytes5(bytes5 indexed t);
 
-    function test_EncodeLog0_bytes5(bytes5 v) public {
+    function testFuzz_EncodeLog0_bytes5(bytes5 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes5(v);
@@ -555,7 +555,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes5(bytes5 v) public {
+    function testFuzz_EncodeLog1_bytes5(bytes5 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes5(v);
@@ -571,7 +571,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes5(bytes5 t, bytes5 v) public {
+    function testFuzz_EncodeLog2_bytes5(bytes5 t, bytes5 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes5(t, v);
@@ -587,7 +587,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes5(bytes5 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes5(bytes5 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes5(t);
@@ -608,7 +608,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes6(bytes6 indexed t, bytes6 v);
     event EncodeLog2WithoutData_bytes6(bytes6 indexed t);
 
-    function test_EncodeLog0_bytes6(bytes6 v) public {
+    function testFuzz_EncodeLog0_bytes6(bytes6 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes6(v);
@@ -620,7 +620,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes6(bytes6 v) public {
+    function testFuzz_EncodeLog1_bytes6(bytes6 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes6(v);
@@ -636,7 +636,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes6(bytes6 t, bytes6 v) public {
+    function testFuzz_EncodeLog2_bytes6(bytes6 t, bytes6 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes6(t, v);
@@ -652,7 +652,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes6(bytes6 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes6(bytes6 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes6(t);
@@ -673,7 +673,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes7(bytes7 indexed t, bytes7 v);
     event EncodeLog2WithoutData_bytes7(bytes7 indexed t);
 
-    function test_EncodeLog0_bytes7(bytes7 v) public {
+    function testFuzz_EncodeLog0_bytes7(bytes7 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes7(v);
@@ -685,7 +685,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes7(bytes7 v) public {
+    function testFuzz_EncodeLog1_bytes7(bytes7 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes7(v);
@@ -701,7 +701,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes7(bytes7 t, bytes7 v) public {
+    function testFuzz_EncodeLog2_bytes7(bytes7 t, bytes7 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes7(t, v);
@@ -717,7 +717,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes7(bytes7 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes7(bytes7 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes7(t);
@@ -738,7 +738,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes8(bytes8 indexed t, bytes8 v);
     event EncodeLog2WithoutData_bytes8(bytes8 indexed t);
 
-    function test_EncodeLog0_bytes8(bytes8 v) public {
+    function testFuzz_EncodeLog0_bytes8(bytes8 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes8(v);
@@ -750,7 +750,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes8(bytes8 v) public {
+    function testFuzz_EncodeLog1_bytes8(bytes8 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes8(v);
@@ -766,7 +766,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes8(bytes8 t, bytes8 v) public {
+    function testFuzz_EncodeLog2_bytes8(bytes8 t, bytes8 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes8(t, v);
@@ -782,7 +782,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes8(bytes8 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes8(bytes8 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes8(t);
@@ -803,7 +803,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes9(bytes9 indexed t, bytes9 v);
     event EncodeLog2WithoutData_bytes9(bytes9 indexed t);
 
-    function test_EncodeLog0_bytes9(bytes9 v) public {
+    function testFuzz_EncodeLog0_bytes9(bytes9 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes9(v);
@@ -815,7 +815,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes9(bytes9 v) public {
+    function testFuzz_EncodeLog1_bytes9(bytes9 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes9(v);
@@ -831,7 +831,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes9(bytes9 t, bytes9 v) public {
+    function testFuzz_EncodeLog2_bytes9(bytes9 t, bytes9 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes9(t, v);
@@ -847,7 +847,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes9(bytes9 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes9(bytes9 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes9(t);
@@ -868,7 +868,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes10(bytes10 indexed t, bytes10 v);
     event EncodeLog2WithoutData_bytes10(bytes10 indexed t);
 
-    function test_EncodeLog0_bytes10(bytes10 v) public {
+    function testFuzz_EncodeLog0_bytes10(bytes10 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes10(v);
@@ -880,7 +880,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes10(bytes10 v) public {
+    function testFuzz_EncodeLog1_bytes10(bytes10 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes10(v);
@@ -896,7 +896,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes10(bytes10 t, bytes10 v) public {
+    function testFuzz_EncodeLog2_bytes10(bytes10 t, bytes10 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes10(t, v);
@@ -912,7 +912,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes10(bytes10 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes10(bytes10 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes10(t);
@@ -933,7 +933,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes11(bytes11 indexed t, bytes11 v);
     event EncodeLog2WithoutData_bytes11(bytes11 indexed t);
 
-    function test_EncodeLog0_bytes11(bytes11 v) public {
+    function testFuzz_EncodeLog0_bytes11(bytes11 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes11(v);
@@ -945,7 +945,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes11(bytes11 v) public {
+    function testFuzz_EncodeLog1_bytes11(bytes11 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes11(v);
@@ -961,7 +961,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes11(bytes11 t, bytes11 v) public {
+    function testFuzz_EncodeLog2_bytes11(bytes11 t, bytes11 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes11(t, v);
@@ -977,7 +977,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes11(bytes11 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes11(bytes11 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes11(t);
@@ -998,7 +998,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes12(bytes12 indexed t, bytes12 v);
     event EncodeLog2WithoutData_bytes12(bytes12 indexed t);
 
-    function test_EncodeLog0_bytes12(bytes12 v) public {
+    function testFuzz_EncodeLog0_bytes12(bytes12 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes12(v);
@@ -1010,7 +1010,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes12(bytes12 v) public {
+    function testFuzz_EncodeLog1_bytes12(bytes12 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes12(v);
@@ -1026,7 +1026,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes12(bytes12 t, bytes12 v) public {
+    function testFuzz_EncodeLog2_bytes12(bytes12 t, bytes12 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes12(t, v);
@@ -1042,7 +1042,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes12(bytes12 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes12(bytes12 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes12(t);
@@ -1063,7 +1063,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes13(bytes13 indexed t, bytes13 v);
     event EncodeLog2WithoutData_bytes13(bytes13 indexed t);
 
-    function test_EncodeLog0_bytes13(bytes13 v) public {
+    function testFuzz_EncodeLog0_bytes13(bytes13 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes13(v);
@@ -1075,7 +1075,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes13(bytes13 v) public {
+    function testFuzz_EncodeLog1_bytes13(bytes13 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes13(v);
@@ -1091,7 +1091,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes13(bytes13 t, bytes13 v) public {
+    function testFuzz_EncodeLog2_bytes13(bytes13 t, bytes13 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes13(t, v);
@@ -1107,7 +1107,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes13(bytes13 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes13(bytes13 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes13(t);
@@ -1128,7 +1128,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes14(bytes14 indexed t, bytes14 v);
     event EncodeLog2WithoutData_bytes14(bytes14 indexed t);
 
-    function test_EncodeLog0_bytes14(bytes14 v) public {
+    function testFuzz_EncodeLog0_bytes14(bytes14 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes14(v);
@@ -1140,7 +1140,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes14(bytes14 v) public {
+    function testFuzz_EncodeLog1_bytes14(bytes14 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes14(v);
@@ -1156,7 +1156,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes14(bytes14 t, bytes14 v) public {
+    function testFuzz_EncodeLog2_bytes14(bytes14 t, bytes14 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes14(t, v);
@@ -1172,7 +1172,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes14(bytes14 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes14(bytes14 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes14(t);
@@ -1193,7 +1193,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes15(bytes15 indexed t, bytes15 v);
     event EncodeLog2WithoutData_bytes15(bytes15 indexed t);
 
-    function test_EncodeLog0_bytes15(bytes15 v) public {
+    function testFuzz_EncodeLog0_bytes15(bytes15 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes15(v);
@@ -1205,7 +1205,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes15(bytes15 v) public {
+    function testFuzz_EncodeLog1_bytes15(bytes15 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes15(v);
@@ -1221,7 +1221,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes15(bytes15 t, bytes15 v) public {
+    function testFuzz_EncodeLog2_bytes15(bytes15 t, bytes15 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes15(t, v);
@@ -1237,7 +1237,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes15(bytes15 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes15(bytes15 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes15(t);
@@ -1258,7 +1258,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes16(bytes16 indexed t, bytes16 v);
     event EncodeLog2WithoutData_bytes16(bytes16 indexed t);
 
-    function test_EncodeLog0_bytes16(bytes16 v) public {
+    function testFuzz_EncodeLog0_bytes16(bytes16 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes16(v);
@@ -1270,7 +1270,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes16(bytes16 v) public {
+    function testFuzz_EncodeLog1_bytes16(bytes16 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes16(v);
@@ -1286,7 +1286,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes16(bytes16 t, bytes16 v) public {
+    function testFuzz_EncodeLog2_bytes16(bytes16 t, bytes16 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes16(t, v);
@@ -1302,7 +1302,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes16(bytes16 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes16(bytes16 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes16(t);
@@ -1323,7 +1323,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes17(bytes17 indexed t, bytes17 v);
     event EncodeLog2WithoutData_bytes17(bytes17 indexed t);
 
-    function test_EncodeLog0_bytes17(bytes17 v) public {
+    function testFuzz_EncodeLog0_bytes17(bytes17 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes17(v);
@@ -1335,7 +1335,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes17(bytes17 v) public {
+    function testFuzz_EncodeLog1_bytes17(bytes17 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes17(v);
@@ -1351,7 +1351,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes17(bytes17 t, bytes17 v) public {
+    function testFuzz_EncodeLog2_bytes17(bytes17 t, bytes17 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes17(t, v);
@@ -1367,7 +1367,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes17(bytes17 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes17(bytes17 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes17(t);
@@ -1388,7 +1388,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes18(bytes18 indexed t, bytes18 v);
     event EncodeLog2WithoutData_bytes18(bytes18 indexed t);
 
-    function test_EncodeLog0_bytes18(bytes18 v) public {
+    function testFuzz_EncodeLog0_bytes18(bytes18 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes18(v);
@@ -1400,7 +1400,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes18(bytes18 v) public {
+    function testFuzz_EncodeLog1_bytes18(bytes18 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes18(v);
@@ -1416,7 +1416,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes18(bytes18 t, bytes18 v) public {
+    function testFuzz_EncodeLog2_bytes18(bytes18 t, bytes18 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes18(t, v);
@@ -1432,7 +1432,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes18(bytes18 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes18(bytes18 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes18(t);
@@ -1453,7 +1453,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes19(bytes19 indexed t, bytes19 v);
     event EncodeLog2WithoutData_bytes19(bytes19 indexed t);
 
-    function test_EncodeLog0_bytes19(bytes19 v) public {
+    function testFuzz_EncodeLog0_bytes19(bytes19 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes19(v);
@@ -1465,7 +1465,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes19(bytes19 v) public {
+    function testFuzz_EncodeLog1_bytes19(bytes19 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes19(v);
@@ -1481,7 +1481,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes19(bytes19 t, bytes19 v) public {
+    function testFuzz_EncodeLog2_bytes19(bytes19 t, bytes19 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes19(t, v);
@@ -1497,7 +1497,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes19(bytes19 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes19(bytes19 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes19(t);
@@ -1518,7 +1518,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes20(bytes20 indexed t, bytes20 v);
     event EncodeLog2WithoutData_bytes20(bytes20 indexed t);
 
-    function test_EncodeLog0_bytes20(bytes20 v) public {
+    function testFuzz_EncodeLog0_bytes20(bytes20 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes20(v);
@@ -1530,7 +1530,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes20(bytes20 v) public {
+    function testFuzz_EncodeLog1_bytes20(bytes20 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes20(v);
@@ -1546,7 +1546,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes20(bytes20 t, bytes20 v) public {
+    function testFuzz_EncodeLog2_bytes20(bytes20 t, bytes20 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes20(t, v);
@@ -1562,7 +1562,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes20(bytes20 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes20(bytes20 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes20(t);
@@ -1583,7 +1583,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes21(bytes21 indexed t, bytes21 v);
     event EncodeLog2WithoutData_bytes21(bytes21 indexed t);
 
-    function test_EncodeLog0_bytes21(bytes21 v) public {
+    function testFuzz_EncodeLog0_bytes21(bytes21 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes21(v);
@@ -1595,7 +1595,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes21(bytes21 v) public {
+    function testFuzz_EncodeLog1_bytes21(bytes21 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes21(v);
@@ -1611,7 +1611,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes21(bytes21 t, bytes21 v) public {
+    function testFuzz_EncodeLog2_bytes21(bytes21 t, bytes21 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes21(t, v);
@@ -1627,7 +1627,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes21(bytes21 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes21(bytes21 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes21(t);
@@ -1648,7 +1648,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes22(bytes22 indexed t, bytes22 v);
     event EncodeLog2WithoutData_bytes22(bytes22 indexed t);
 
-    function test_EncodeLog0_bytes22(bytes22 v) public {
+    function testFuzz_EncodeLog0_bytes22(bytes22 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes22(v);
@@ -1660,7 +1660,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes22(bytes22 v) public {
+    function testFuzz_EncodeLog1_bytes22(bytes22 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes22(v);
@@ -1676,7 +1676,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes22(bytes22 t, bytes22 v) public {
+    function testFuzz_EncodeLog2_bytes22(bytes22 t, bytes22 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes22(t, v);
@@ -1692,7 +1692,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes22(bytes22 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes22(bytes22 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes22(t);
@@ -1713,7 +1713,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes23(bytes23 indexed t, bytes23 v);
     event EncodeLog2WithoutData_bytes23(bytes23 indexed t);
 
-    function test_EncodeLog0_bytes23(bytes23 v) public {
+    function testFuzz_EncodeLog0_bytes23(bytes23 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes23(v);
@@ -1725,7 +1725,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes23(bytes23 v) public {
+    function testFuzz_EncodeLog1_bytes23(bytes23 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes23(v);
@@ -1741,7 +1741,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes23(bytes23 t, bytes23 v) public {
+    function testFuzz_EncodeLog2_bytes23(bytes23 t, bytes23 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes23(t, v);
@@ -1757,7 +1757,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes23(bytes23 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes23(bytes23 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes23(t);
@@ -1778,7 +1778,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes24(bytes24 indexed t, bytes24 v);
     event EncodeLog2WithoutData_bytes24(bytes24 indexed t);
 
-    function test_EncodeLog0_bytes24(bytes24 v) public {
+    function testFuzz_EncodeLog0_bytes24(bytes24 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes24(v);
@@ -1790,7 +1790,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes24(bytes24 v) public {
+    function testFuzz_EncodeLog1_bytes24(bytes24 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes24(v);
@@ -1806,7 +1806,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes24(bytes24 t, bytes24 v) public {
+    function testFuzz_EncodeLog2_bytes24(bytes24 t, bytes24 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes24(t, v);
@@ -1822,7 +1822,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes24(bytes24 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes24(bytes24 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes24(t);
@@ -1843,7 +1843,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes25(bytes25 indexed t, bytes25 v);
     event EncodeLog2WithoutData_bytes25(bytes25 indexed t);
 
-    function test_EncodeLog0_bytes25(bytes25 v) public {
+    function testFuzz_EncodeLog0_bytes25(bytes25 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes25(v);
@@ -1855,7 +1855,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes25(bytes25 v) public {
+    function testFuzz_EncodeLog1_bytes25(bytes25 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes25(v);
@@ -1871,7 +1871,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes25(bytes25 t, bytes25 v) public {
+    function testFuzz_EncodeLog2_bytes25(bytes25 t, bytes25 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes25(t, v);
@@ -1887,7 +1887,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes25(bytes25 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes25(bytes25 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes25(t);
@@ -1908,7 +1908,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes26(bytes26 indexed t, bytes26 v);
     event EncodeLog2WithoutData_bytes26(bytes26 indexed t);
 
-    function test_EncodeLog0_bytes26(bytes26 v) public {
+    function testFuzz_EncodeLog0_bytes26(bytes26 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes26(v);
@@ -1920,7 +1920,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes26(bytes26 v) public {
+    function testFuzz_EncodeLog1_bytes26(bytes26 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes26(v);
@@ -1936,7 +1936,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes26(bytes26 t, bytes26 v) public {
+    function testFuzz_EncodeLog2_bytes26(bytes26 t, bytes26 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes26(t, v);
@@ -1952,7 +1952,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes26(bytes26 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes26(bytes26 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes26(t);
@@ -1973,7 +1973,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes27(bytes27 indexed t, bytes27 v);
     event EncodeLog2WithoutData_bytes27(bytes27 indexed t);
 
-    function test_EncodeLog0_bytes27(bytes27 v) public {
+    function testFuzz_EncodeLog0_bytes27(bytes27 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes27(v);
@@ -1985,7 +1985,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes27(bytes27 v) public {
+    function testFuzz_EncodeLog1_bytes27(bytes27 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes27(v);
@@ -2001,7 +2001,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes27(bytes27 t, bytes27 v) public {
+    function testFuzz_EncodeLog2_bytes27(bytes27 t, bytes27 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes27(t, v);
@@ -2017,7 +2017,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes27(bytes27 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes27(bytes27 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes27(t);
@@ -2038,7 +2038,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes28(bytes28 indexed t, bytes28 v);
     event EncodeLog2WithoutData_bytes28(bytes28 indexed t);
 
-    function test_EncodeLog0_bytes28(bytes28 v) public {
+    function testFuzz_EncodeLog0_bytes28(bytes28 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes28(v);
@@ -2050,7 +2050,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes28(bytes28 v) public {
+    function testFuzz_EncodeLog1_bytes28(bytes28 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes28(v);
@@ -2066,7 +2066,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes28(bytes28 t, bytes28 v) public {
+    function testFuzz_EncodeLog2_bytes28(bytes28 t, bytes28 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes28(t, v);
@@ -2082,7 +2082,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes28(bytes28 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes28(bytes28 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes28(t);
@@ -2103,7 +2103,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes29(bytes29 indexed t, bytes29 v);
     event EncodeLog2WithoutData_bytes29(bytes29 indexed t);
 
-    function test_EncodeLog0_bytes29(bytes29 v) public {
+    function testFuzz_EncodeLog0_bytes29(bytes29 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes29(v);
@@ -2115,7 +2115,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes29(bytes29 v) public {
+    function testFuzz_EncodeLog1_bytes29(bytes29 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes29(v);
@@ -2131,7 +2131,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes29(bytes29 t, bytes29 v) public {
+    function testFuzz_EncodeLog2_bytes29(bytes29 t, bytes29 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes29(t, v);
@@ -2147,7 +2147,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes29(bytes29 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes29(bytes29 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes29(t);
@@ -2168,7 +2168,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes30(bytes30 indexed t, bytes30 v);
     event EncodeLog2WithoutData_bytes30(bytes30 indexed t);
 
-    function test_EncodeLog0_bytes30(bytes30 v) public {
+    function testFuzz_EncodeLog0_bytes30(bytes30 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes30(v);
@@ -2180,7 +2180,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes30(bytes30 v) public {
+    function testFuzz_EncodeLog1_bytes30(bytes30 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes30(v);
@@ -2196,7 +2196,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes30(bytes30 t, bytes30 v) public {
+    function testFuzz_EncodeLog2_bytes30(bytes30 t, bytes30 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes30(t, v);
@@ -2212,7 +2212,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes30(bytes30 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes30(bytes30 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes30(t);
@@ -2233,7 +2233,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes31(bytes31 indexed t, bytes31 v);
     event EncodeLog2WithoutData_bytes31(bytes31 indexed t);
 
-    function test_EncodeLog0_bytes31(bytes31 v) public {
+    function testFuzz_EncodeLog0_bytes31(bytes31 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes31(v);
@@ -2245,7 +2245,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes31(bytes31 v) public {
+    function testFuzz_EncodeLog1_bytes31(bytes31 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes31(v);
@@ -2261,7 +2261,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes31(bytes31 t, bytes31 v) public {
+    function testFuzz_EncodeLog2_bytes31(bytes31 t, bytes31 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes31(t, v);
@@ -2277,7 +2277,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes31(bytes31 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes31(bytes31 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes31(t);
@@ -2298,7 +2298,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_bytes32(bytes32 indexed t, bytes32 v);
     event EncodeLog2WithoutData_bytes32(bytes32 indexed t);
 
-    function test_EncodeLog0_bytes32(bytes32 v) public {
+    function testFuzz_EncodeLog0_bytes32(bytes32 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_bytes32(v);
@@ -2310,7 +2310,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_bytes32(bytes32 v) public {
+    function testFuzz_EncodeLog1_bytes32(bytes32 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_bytes32(v);
@@ -2326,7 +2326,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_bytes32(bytes32 t, bytes32 v) public {
+    function testFuzz_EncodeLog2_bytes32(bytes32 t, bytes32 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_bytes32(t, v);
@@ -2342,7 +2342,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_bytes32(bytes32 t) public {
+    function testFuzz_EncodeLog2WithoutData_bytes32(bytes32 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_bytes32(t);
@@ -2363,7 +2363,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint8(uint8 indexed t, uint8 v);
     event EncodeLog2WithoutData_uint8(uint8 indexed t);
 
-    function test_EncodeLog0_uint8(uint8 v) public {
+    function testFuzz_EncodeLog0_uint8(uint8 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint8(v);
@@ -2375,7 +2375,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint8(uint8 v) public {
+    function testFuzz_EncodeLog1_uint8(uint8 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint8(v);
@@ -2391,7 +2391,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint8(uint8 t, uint8 v) public {
+    function testFuzz_EncodeLog2_uint8(uint8 t, uint8 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint8(t, v);
@@ -2407,7 +2407,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint8(uint8 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint8(uint8 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint8(t);
@@ -2428,7 +2428,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint16(uint16 indexed t, uint16 v);
     event EncodeLog2WithoutData_uint16(uint16 indexed t);
 
-    function test_EncodeLog0_uint16(uint16 v) public {
+    function testFuzz_EncodeLog0_uint16(uint16 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint16(v);
@@ -2440,7 +2440,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint16(uint16 v) public {
+    function testFuzz_EncodeLog1_uint16(uint16 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint16(v);
@@ -2456,7 +2456,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint16(uint16 t, uint16 v) public {
+    function testFuzz_EncodeLog2_uint16(uint16 t, uint16 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint16(t, v);
@@ -2472,7 +2472,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint16(uint16 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint16(uint16 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint16(t);
@@ -2493,7 +2493,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint24(uint24 indexed t, uint24 v);
     event EncodeLog2WithoutData_uint24(uint24 indexed t);
 
-    function test_EncodeLog0_uint24(uint24 v) public {
+    function testFuzz_EncodeLog0_uint24(uint24 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint24(v);
@@ -2505,7 +2505,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint24(uint24 v) public {
+    function testFuzz_EncodeLog1_uint24(uint24 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint24(v);
@@ -2521,7 +2521,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint24(uint24 t, uint24 v) public {
+    function testFuzz_EncodeLog2_uint24(uint24 t, uint24 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint24(t, v);
@@ -2537,7 +2537,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint24(uint24 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint24(uint24 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint24(t);
@@ -2558,7 +2558,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint32(uint32 indexed t, uint32 v);
     event EncodeLog2WithoutData_uint32(uint32 indexed t);
 
-    function test_EncodeLog0_uint32(uint32 v) public {
+    function testFuzz_EncodeLog0_uint32(uint32 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint32(v);
@@ -2570,7 +2570,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint32(uint32 v) public {
+    function testFuzz_EncodeLog1_uint32(uint32 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint32(v);
@@ -2586,7 +2586,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint32(uint32 t, uint32 v) public {
+    function testFuzz_EncodeLog2_uint32(uint32 t, uint32 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint32(t, v);
@@ -2602,7 +2602,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint32(uint32 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint32(uint32 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint32(t);
@@ -2623,7 +2623,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint40(uint40 indexed t, uint40 v);
     event EncodeLog2WithoutData_uint40(uint40 indexed t);
 
-    function test_EncodeLog0_uint40(uint40 v) public {
+    function testFuzz_EncodeLog0_uint40(uint40 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint40(v);
@@ -2635,7 +2635,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint40(uint40 v) public {
+    function testFuzz_EncodeLog1_uint40(uint40 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint40(v);
@@ -2651,7 +2651,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint40(uint40 t, uint40 v) public {
+    function testFuzz_EncodeLog2_uint40(uint40 t, uint40 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint40(t, v);
@@ -2667,7 +2667,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint40(uint40 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint40(uint40 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint40(t);
@@ -2688,7 +2688,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint48(uint48 indexed t, uint48 v);
     event EncodeLog2WithoutData_uint48(uint48 indexed t);
 
-    function test_EncodeLog0_uint48(uint48 v) public {
+    function testFuzz_EncodeLog0_uint48(uint48 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint48(v);
@@ -2700,7 +2700,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint48(uint48 v) public {
+    function testFuzz_EncodeLog1_uint48(uint48 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint48(v);
@@ -2716,7 +2716,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint48(uint48 t, uint48 v) public {
+    function testFuzz_EncodeLog2_uint48(uint48 t, uint48 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint48(t, v);
@@ -2732,7 +2732,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint48(uint48 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint48(uint48 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint48(t);
@@ -2753,7 +2753,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint56(uint56 indexed t, uint56 v);
     event EncodeLog2WithoutData_uint56(uint56 indexed t);
 
-    function test_EncodeLog0_uint56(uint56 v) public {
+    function testFuzz_EncodeLog0_uint56(uint56 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint56(v);
@@ -2765,7 +2765,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint56(uint56 v) public {
+    function testFuzz_EncodeLog1_uint56(uint56 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint56(v);
@@ -2781,7 +2781,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint56(uint56 t, uint56 v) public {
+    function testFuzz_EncodeLog2_uint56(uint56 t, uint56 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint56(t, v);
@@ -2797,7 +2797,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint56(uint56 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint56(uint56 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint56(t);
@@ -2818,7 +2818,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint64(uint64 indexed t, uint64 v);
     event EncodeLog2WithoutData_uint64(uint64 indexed t);
 
-    function test_EncodeLog0_uint64(uint64 v) public {
+    function testFuzz_EncodeLog0_uint64(uint64 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint64(v);
@@ -2830,7 +2830,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint64(uint64 v) public {
+    function testFuzz_EncodeLog1_uint64(uint64 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint64(v);
@@ -2846,7 +2846,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint64(uint64 t, uint64 v) public {
+    function testFuzz_EncodeLog2_uint64(uint64 t, uint64 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint64(t, v);
@@ -2862,7 +2862,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint64(uint64 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint64(uint64 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint64(t);
@@ -2883,7 +2883,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint72(uint72 indexed t, uint72 v);
     event EncodeLog2WithoutData_uint72(uint72 indexed t);
 
-    function test_EncodeLog0_uint72(uint72 v) public {
+    function testFuzz_EncodeLog0_uint72(uint72 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint72(v);
@@ -2895,7 +2895,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint72(uint72 v) public {
+    function testFuzz_EncodeLog1_uint72(uint72 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint72(v);
@@ -2911,7 +2911,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint72(uint72 t, uint72 v) public {
+    function testFuzz_EncodeLog2_uint72(uint72 t, uint72 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint72(t, v);
@@ -2927,7 +2927,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint72(uint72 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint72(uint72 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint72(t);
@@ -2948,7 +2948,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint80(uint80 indexed t, uint80 v);
     event EncodeLog2WithoutData_uint80(uint80 indexed t);
 
-    function test_EncodeLog0_uint80(uint80 v) public {
+    function testFuzz_EncodeLog0_uint80(uint80 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint80(v);
@@ -2960,7 +2960,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint80(uint80 v) public {
+    function testFuzz_EncodeLog1_uint80(uint80 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint80(v);
@@ -2976,7 +2976,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint80(uint80 t, uint80 v) public {
+    function testFuzz_EncodeLog2_uint80(uint80 t, uint80 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint80(t, v);
@@ -2992,7 +2992,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint80(uint80 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint80(uint80 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint80(t);
@@ -3013,7 +3013,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint88(uint88 indexed t, uint88 v);
     event EncodeLog2WithoutData_uint88(uint88 indexed t);
 
-    function test_EncodeLog0_uint88(uint88 v) public {
+    function testFuzz_EncodeLog0_uint88(uint88 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint88(v);
@@ -3025,7 +3025,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint88(uint88 v) public {
+    function testFuzz_EncodeLog1_uint88(uint88 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint88(v);
@@ -3041,7 +3041,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint88(uint88 t, uint88 v) public {
+    function testFuzz_EncodeLog2_uint88(uint88 t, uint88 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint88(t, v);
@@ -3057,7 +3057,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint88(uint88 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint88(uint88 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint88(t);
@@ -3078,7 +3078,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint96(uint96 indexed t, uint96 v);
     event EncodeLog2WithoutData_uint96(uint96 indexed t);
 
-    function test_EncodeLog0_uint96(uint96 v) public {
+    function testFuzz_EncodeLog0_uint96(uint96 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint96(v);
@@ -3090,7 +3090,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint96(uint96 v) public {
+    function testFuzz_EncodeLog1_uint96(uint96 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint96(v);
@@ -3106,7 +3106,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint96(uint96 t, uint96 v) public {
+    function testFuzz_EncodeLog2_uint96(uint96 t, uint96 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint96(t, v);
@@ -3122,7 +3122,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint96(uint96 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint96(uint96 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint96(t);
@@ -3143,7 +3143,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint104(uint104 indexed t, uint104 v);
     event EncodeLog2WithoutData_uint104(uint104 indexed t);
 
-    function test_EncodeLog0_uint104(uint104 v) public {
+    function testFuzz_EncodeLog0_uint104(uint104 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint104(v);
@@ -3155,7 +3155,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint104(uint104 v) public {
+    function testFuzz_EncodeLog1_uint104(uint104 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint104(v);
@@ -3171,7 +3171,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint104(uint104 t, uint104 v) public {
+    function testFuzz_EncodeLog2_uint104(uint104 t, uint104 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint104(t, v);
@@ -3187,7 +3187,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint104(uint104 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint104(uint104 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint104(t);
@@ -3208,7 +3208,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint112(uint112 indexed t, uint112 v);
     event EncodeLog2WithoutData_uint112(uint112 indexed t);
 
-    function test_EncodeLog0_uint112(uint112 v) public {
+    function testFuzz_EncodeLog0_uint112(uint112 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint112(v);
@@ -3220,7 +3220,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint112(uint112 v) public {
+    function testFuzz_EncodeLog1_uint112(uint112 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint112(v);
@@ -3236,7 +3236,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint112(uint112 t, uint112 v) public {
+    function testFuzz_EncodeLog2_uint112(uint112 t, uint112 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint112(t, v);
@@ -3252,7 +3252,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint112(uint112 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint112(uint112 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint112(t);
@@ -3273,7 +3273,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint120(uint120 indexed t, uint120 v);
     event EncodeLog2WithoutData_uint120(uint120 indexed t);
 
-    function test_EncodeLog0_uint120(uint120 v) public {
+    function testFuzz_EncodeLog0_uint120(uint120 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint120(v);
@@ -3285,7 +3285,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint120(uint120 v) public {
+    function testFuzz_EncodeLog1_uint120(uint120 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint120(v);
@@ -3301,7 +3301,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint120(uint120 t, uint120 v) public {
+    function testFuzz_EncodeLog2_uint120(uint120 t, uint120 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint120(t, v);
@@ -3317,7 +3317,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint120(uint120 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint120(uint120 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint120(t);
@@ -3338,7 +3338,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint128(uint128 indexed t, uint128 v);
     event EncodeLog2WithoutData_uint128(uint128 indexed t);
 
-    function test_EncodeLog0_uint128(uint128 v) public {
+    function testFuzz_EncodeLog0_uint128(uint128 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint128(v);
@@ -3350,7 +3350,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint128(uint128 v) public {
+    function testFuzz_EncodeLog1_uint128(uint128 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint128(v);
@@ -3366,7 +3366,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint128(uint128 t, uint128 v) public {
+    function testFuzz_EncodeLog2_uint128(uint128 t, uint128 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint128(t, v);
@@ -3382,7 +3382,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint128(uint128 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint128(uint128 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint128(t);
@@ -3403,7 +3403,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint136(uint136 indexed t, uint136 v);
     event EncodeLog2WithoutData_uint136(uint136 indexed t);
 
-    function test_EncodeLog0_uint136(uint136 v) public {
+    function testFuzz_EncodeLog0_uint136(uint136 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint136(v);
@@ -3415,7 +3415,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint136(uint136 v) public {
+    function testFuzz_EncodeLog1_uint136(uint136 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint136(v);
@@ -3431,7 +3431,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint136(uint136 t, uint136 v) public {
+    function testFuzz_EncodeLog2_uint136(uint136 t, uint136 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint136(t, v);
@@ -3447,7 +3447,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint136(uint136 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint136(uint136 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint136(t);
@@ -3468,7 +3468,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint144(uint144 indexed t, uint144 v);
     event EncodeLog2WithoutData_uint144(uint144 indexed t);
 
-    function test_EncodeLog0_uint144(uint144 v) public {
+    function testFuzz_EncodeLog0_uint144(uint144 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint144(v);
@@ -3480,7 +3480,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint144(uint144 v) public {
+    function testFuzz_EncodeLog1_uint144(uint144 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint144(v);
@@ -3496,7 +3496,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint144(uint144 t, uint144 v) public {
+    function testFuzz_EncodeLog2_uint144(uint144 t, uint144 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint144(t, v);
@@ -3512,7 +3512,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint144(uint144 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint144(uint144 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint144(t);
@@ -3533,7 +3533,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint152(uint152 indexed t, uint152 v);
     event EncodeLog2WithoutData_uint152(uint152 indexed t);
 
-    function test_EncodeLog0_uint152(uint152 v) public {
+    function testFuzz_EncodeLog0_uint152(uint152 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint152(v);
@@ -3545,7 +3545,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint152(uint152 v) public {
+    function testFuzz_EncodeLog1_uint152(uint152 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint152(v);
@@ -3561,7 +3561,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint152(uint152 t, uint152 v) public {
+    function testFuzz_EncodeLog2_uint152(uint152 t, uint152 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint152(t, v);
@@ -3577,7 +3577,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint152(uint152 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint152(uint152 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint152(t);
@@ -3598,7 +3598,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint160(uint160 indexed t, uint160 v);
     event EncodeLog2WithoutData_uint160(uint160 indexed t);
 
-    function test_EncodeLog0_uint160(uint160 v) public {
+    function testFuzz_EncodeLog0_uint160(uint160 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint160(v);
@@ -3610,7 +3610,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint160(uint160 v) public {
+    function testFuzz_EncodeLog1_uint160(uint160 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint160(v);
@@ -3626,7 +3626,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint160(uint160 t, uint160 v) public {
+    function testFuzz_EncodeLog2_uint160(uint160 t, uint160 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint160(t, v);
@@ -3642,7 +3642,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint160(uint160 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint160(uint160 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint160(t);
@@ -3663,7 +3663,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint168(uint168 indexed t, uint168 v);
     event EncodeLog2WithoutData_uint168(uint168 indexed t);
 
-    function test_EncodeLog0_uint168(uint168 v) public {
+    function testFuzz_EncodeLog0_uint168(uint168 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint168(v);
@@ -3675,7 +3675,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint168(uint168 v) public {
+    function testFuzz_EncodeLog1_uint168(uint168 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint168(v);
@@ -3691,7 +3691,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint168(uint168 t, uint168 v) public {
+    function testFuzz_EncodeLog2_uint168(uint168 t, uint168 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint168(t, v);
@@ -3707,7 +3707,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint168(uint168 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint168(uint168 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint168(t);
@@ -3728,7 +3728,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint176(uint176 indexed t, uint176 v);
     event EncodeLog2WithoutData_uint176(uint176 indexed t);
 
-    function test_EncodeLog0_uint176(uint176 v) public {
+    function testFuzz_EncodeLog0_uint176(uint176 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint176(v);
@@ -3740,7 +3740,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint176(uint176 v) public {
+    function testFuzz_EncodeLog1_uint176(uint176 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint176(v);
@@ -3756,7 +3756,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint176(uint176 t, uint176 v) public {
+    function testFuzz_EncodeLog2_uint176(uint176 t, uint176 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint176(t, v);
@@ -3772,7 +3772,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint176(uint176 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint176(uint176 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint176(t);
@@ -3793,7 +3793,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint184(uint184 indexed t, uint184 v);
     event EncodeLog2WithoutData_uint184(uint184 indexed t);
 
-    function test_EncodeLog0_uint184(uint184 v) public {
+    function testFuzz_EncodeLog0_uint184(uint184 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint184(v);
@@ -3805,7 +3805,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint184(uint184 v) public {
+    function testFuzz_EncodeLog1_uint184(uint184 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint184(v);
@@ -3821,7 +3821,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint184(uint184 t, uint184 v) public {
+    function testFuzz_EncodeLog2_uint184(uint184 t, uint184 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint184(t, v);
@@ -3837,7 +3837,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint184(uint184 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint184(uint184 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint184(t);
@@ -3858,7 +3858,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint192(uint192 indexed t, uint192 v);
     event EncodeLog2WithoutData_uint192(uint192 indexed t);
 
-    function test_EncodeLog0_uint192(uint192 v) public {
+    function testFuzz_EncodeLog0_uint192(uint192 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint192(v);
@@ -3870,7 +3870,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint192(uint192 v) public {
+    function testFuzz_EncodeLog1_uint192(uint192 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint192(v);
@@ -3886,7 +3886,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint192(uint192 t, uint192 v) public {
+    function testFuzz_EncodeLog2_uint192(uint192 t, uint192 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint192(t, v);
@@ -3902,7 +3902,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint192(uint192 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint192(uint192 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint192(t);
@@ -3923,7 +3923,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint200(uint200 indexed t, uint200 v);
     event EncodeLog2WithoutData_uint200(uint200 indexed t);
 
-    function test_EncodeLog0_uint200(uint200 v) public {
+    function testFuzz_EncodeLog0_uint200(uint200 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint200(v);
@@ -3935,7 +3935,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint200(uint200 v) public {
+    function testFuzz_EncodeLog1_uint200(uint200 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint200(v);
@@ -3951,7 +3951,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint200(uint200 t, uint200 v) public {
+    function testFuzz_EncodeLog2_uint200(uint200 t, uint200 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint200(t, v);
@@ -3967,7 +3967,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint200(uint200 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint200(uint200 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint200(t);
@@ -3988,7 +3988,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint208(uint208 indexed t, uint208 v);
     event EncodeLog2WithoutData_uint208(uint208 indexed t);
 
-    function test_EncodeLog0_uint208(uint208 v) public {
+    function testFuzz_EncodeLog0_uint208(uint208 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint208(v);
@@ -4000,7 +4000,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint208(uint208 v) public {
+    function testFuzz_EncodeLog1_uint208(uint208 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint208(v);
@@ -4016,7 +4016,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint208(uint208 t, uint208 v) public {
+    function testFuzz_EncodeLog2_uint208(uint208 t, uint208 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint208(t, v);
@@ -4032,7 +4032,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint208(uint208 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint208(uint208 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint208(t);
@@ -4053,7 +4053,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint216(uint216 indexed t, uint216 v);
     event EncodeLog2WithoutData_uint216(uint216 indexed t);
 
-    function test_EncodeLog0_uint216(uint216 v) public {
+    function testFuzz_EncodeLog0_uint216(uint216 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint216(v);
@@ -4065,7 +4065,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint216(uint216 v) public {
+    function testFuzz_EncodeLog1_uint216(uint216 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint216(v);
@@ -4081,7 +4081,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint216(uint216 t, uint216 v) public {
+    function testFuzz_EncodeLog2_uint216(uint216 t, uint216 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint216(t, v);
@@ -4097,7 +4097,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint216(uint216 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint216(uint216 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint216(t);
@@ -4118,7 +4118,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint224(uint224 indexed t, uint224 v);
     event EncodeLog2WithoutData_uint224(uint224 indexed t);
 
-    function test_EncodeLog0_uint224(uint224 v) public {
+    function testFuzz_EncodeLog0_uint224(uint224 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint224(v);
@@ -4130,7 +4130,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint224(uint224 v) public {
+    function testFuzz_EncodeLog1_uint224(uint224 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint224(v);
@@ -4146,7 +4146,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint224(uint224 t, uint224 v) public {
+    function testFuzz_EncodeLog2_uint224(uint224 t, uint224 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint224(t, v);
@@ -4162,7 +4162,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint224(uint224 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint224(uint224 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint224(t);
@@ -4183,7 +4183,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint232(uint232 indexed t, uint232 v);
     event EncodeLog2WithoutData_uint232(uint232 indexed t);
 
-    function test_EncodeLog0_uint232(uint232 v) public {
+    function testFuzz_EncodeLog0_uint232(uint232 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint232(v);
@@ -4195,7 +4195,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint232(uint232 v) public {
+    function testFuzz_EncodeLog1_uint232(uint232 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint232(v);
@@ -4211,7 +4211,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint232(uint232 t, uint232 v) public {
+    function testFuzz_EncodeLog2_uint232(uint232 t, uint232 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint232(t, v);
@@ -4227,7 +4227,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint232(uint232 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint232(uint232 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint232(t);
@@ -4248,7 +4248,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint240(uint240 indexed t, uint240 v);
     event EncodeLog2WithoutData_uint240(uint240 indexed t);
 
-    function test_EncodeLog0_uint240(uint240 v) public {
+    function testFuzz_EncodeLog0_uint240(uint240 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint240(v);
@@ -4260,7 +4260,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint240(uint240 v) public {
+    function testFuzz_EncodeLog1_uint240(uint240 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint240(v);
@@ -4276,7 +4276,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint240(uint240 t, uint240 v) public {
+    function testFuzz_EncodeLog2_uint240(uint240 t, uint240 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint240(t, v);
@@ -4292,7 +4292,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint240(uint240 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint240(uint240 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint240(t);
@@ -4313,7 +4313,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint248(uint248 indexed t, uint248 v);
     event EncodeLog2WithoutData_uint248(uint248 indexed t);
 
-    function test_EncodeLog0_uint248(uint248 v) public {
+    function testFuzz_EncodeLog0_uint248(uint248 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint248(v);
@@ -4325,7 +4325,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint248(uint248 v) public {
+    function testFuzz_EncodeLog1_uint248(uint248 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint248(v);
@@ -4341,7 +4341,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint248(uint248 t, uint248 v) public {
+    function testFuzz_EncodeLog2_uint248(uint248 t, uint248 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint248(t, v);
@@ -4357,7 +4357,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint248(uint248 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint248(uint248 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint248(t);
@@ -4378,7 +4378,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_uint256(uint256 indexed t, uint256 v);
     event EncodeLog2WithoutData_uint256(uint256 indexed t);
 
-    function test_EncodeLog0_uint256(uint256 v) public {
+    function testFuzz_EncodeLog0_uint256(uint256 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_uint256(v);
@@ -4390,7 +4390,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_uint256(uint256 v) public {
+    function testFuzz_EncodeLog1_uint256(uint256 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_uint256(v);
@@ -4406,7 +4406,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_uint256(uint256 t, uint256 v) public {
+    function testFuzz_EncodeLog2_uint256(uint256 t, uint256 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_uint256(t, v);
@@ -4422,7 +4422,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_uint256(uint256 t) public {
+    function testFuzz_EncodeLog2WithoutData_uint256(uint256 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_uint256(t);
@@ -4443,7 +4443,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int8(int8 indexed t, int8 v);
     event EncodeLog2WithoutData_int8(int8 indexed t);
 
-    function test_EncodeLog0_int8(int8 v) public {
+    function testFuzz_EncodeLog0_int8(int8 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int8(v);
@@ -4455,7 +4455,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int8(int8 v) public {
+    function testFuzz_EncodeLog1_int8(int8 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int8(v);
@@ -4471,7 +4471,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int8(int8 t, int8 v) public {
+    function testFuzz_EncodeLog2_int8(int8 t, int8 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int8(t, v);
@@ -4487,7 +4487,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int8(int8 t) public {
+    function testFuzz_EncodeLog2WithoutData_int8(int8 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int8(t);
@@ -4508,7 +4508,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int16(int16 indexed t, int16 v);
     event EncodeLog2WithoutData_int16(int16 indexed t);
 
-    function test_EncodeLog0_int16(int16 v) public {
+    function testFuzz_EncodeLog0_int16(int16 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int16(v);
@@ -4520,7 +4520,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int16(int16 v) public {
+    function testFuzz_EncodeLog1_int16(int16 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int16(v);
@@ -4536,7 +4536,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int16(int16 t, int16 v) public {
+    function testFuzz_EncodeLog2_int16(int16 t, int16 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int16(t, v);
@@ -4552,7 +4552,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int16(int16 t) public {
+    function testFuzz_EncodeLog2WithoutData_int16(int16 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int16(t);
@@ -4573,7 +4573,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int24(int24 indexed t, int24 v);
     event EncodeLog2WithoutData_int24(int24 indexed t);
 
-    function test_EncodeLog0_int24(int24 v) public {
+    function testFuzz_EncodeLog0_int24(int24 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int24(v);
@@ -4585,7 +4585,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int24(int24 v) public {
+    function testFuzz_EncodeLog1_int24(int24 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int24(v);
@@ -4601,7 +4601,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int24(int24 t, int24 v) public {
+    function testFuzz_EncodeLog2_int24(int24 t, int24 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int24(t, v);
@@ -4617,7 +4617,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int24(int24 t) public {
+    function testFuzz_EncodeLog2WithoutData_int24(int24 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int24(t);
@@ -4638,7 +4638,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int32(int32 indexed t, int32 v);
     event EncodeLog2WithoutData_int32(int32 indexed t);
 
-    function test_EncodeLog0_int32(int32 v) public {
+    function testFuzz_EncodeLog0_int32(int32 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int32(v);
@@ -4650,7 +4650,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int32(int32 v) public {
+    function testFuzz_EncodeLog1_int32(int32 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int32(v);
@@ -4666,7 +4666,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int32(int32 t, int32 v) public {
+    function testFuzz_EncodeLog2_int32(int32 t, int32 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int32(t, v);
@@ -4682,7 +4682,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int32(int32 t) public {
+    function testFuzz_EncodeLog2WithoutData_int32(int32 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int32(t);
@@ -4703,7 +4703,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int40(int40 indexed t, int40 v);
     event EncodeLog2WithoutData_int40(int40 indexed t);
 
-    function test_EncodeLog0_int40(int40 v) public {
+    function testFuzz_EncodeLog0_int40(int40 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int40(v);
@@ -4715,7 +4715,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int40(int40 v) public {
+    function testFuzz_EncodeLog1_int40(int40 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int40(v);
@@ -4731,7 +4731,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int40(int40 t, int40 v) public {
+    function testFuzz_EncodeLog2_int40(int40 t, int40 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int40(t, v);
@@ -4747,7 +4747,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int40(int40 t) public {
+    function testFuzz_EncodeLog2WithoutData_int40(int40 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int40(t);
@@ -4768,7 +4768,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int48(int48 indexed t, int48 v);
     event EncodeLog2WithoutData_int48(int48 indexed t);
 
-    function test_EncodeLog0_int48(int48 v) public {
+    function testFuzz_EncodeLog0_int48(int48 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int48(v);
@@ -4780,7 +4780,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int48(int48 v) public {
+    function testFuzz_EncodeLog1_int48(int48 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int48(v);
@@ -4796,7 +4796,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int48(int48 t, int48 v) public {
+    function testFuzz_EncodeLog2_int48(int48 t, int48 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int48(t, v);
@@ -4812,7 +4812,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int48(int48 t) public {
+    function testFuzz_EncodeLog2WithoutData_int48(int48 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int48(t);
@@ -4833,7 +4833,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int56(int56 indexed t, int56 v);
     event EncodeLog2WithoutData_int56(int56 indexed t);
 
-    function test_EncodeLog0_int56(int56 v) public {
+    function testFuzz_EncodeLog0_int56(int56 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int56(v);
@@ -4845,7 +4845,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int56(int56 v) public {
+    function testFuzz_EncodeLog1_int56(int56 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int56(v);
@@ -4861,7 +4861,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int56(int56 t, int56 v) public {
+    function testFuzz_EncodeLog2_int56(int56 t, int56 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int56(t, v);
@@ -4877,7 +4877,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int56(int56 t) public {
+    function testFuzz_EncodeLog2WithoutData_int56(int56 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int56(t);
@@ -4898,7 +4898,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int64(int64 indexed t, int64 v);
     event EncodeLog2WithoutData_int64(int64 indexed t);
 
-    function test_EncodeLog0_int64(int64 v) public {
+    function testFuzz_EncodeLog0_int64(int64 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int64(v);
@@ -4910,7 +4910,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int64(int64 v) public {
+    function testFuzz_EncodeLog1_int64(int64 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int64(v);
@@ -4926,7 +4926,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int64(int64 t, int64 v) public {
+    function testFuzz_EncodeLog2_int64(int64 t, int64 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int64(t, v);
@@ -4942,7 +4942,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int64(int64 t) public {
+    function testFuzz_EncodeLog2WithoutData_int64(int64 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int64(t);
@@ -4963,7 +4963,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int72(int72 indexed t, int72 v);
     event EncodeLog2WithoutData_int72(int72 indexed t);
 
-    function test_EncodeLog0_int72(int72 v) public {
+    function testFuzz_EncodeLog0_int72(int72 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int72(v);
@@ -4975,7 +4975,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int72(int72 v) public {
+    function testFuzz_EncodeLog1_int72(int72 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int72(v);
@@ -4991,7 +4991,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int72(int72 t, int72 v) public {
+    function testFuzz_EncodeLog2_int72(int72 t, int72 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int72(t, v);
@@ -5007,7 +5007,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int72(int72 t) public {
+    function testFuzz_EncodeLog2WithoutData_int72(int72 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int72(t);
@@ -5028,7 +5028,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int80(int80 indexed t, int80 v);
     event EncodeLog2WithoutData_int80(int80 indexed t);
 
-    function test_EncodeLog0_int80(int80 v) public {
+    function testFuzz_EncodeLog0_int80(int80 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int80(v);
@@ -5040,7 +5040,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int80(int80 v) public {
+    function testFuzz_EncodeLog1_int80(int80 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int80(v);
@@ -5056,7 +5056,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int80(int80 t, int80 v) public {
+    function testFuzz_EncodeLog2_int80(int80 t, int80 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int80(t, v);
@@ -5072,7 +5072,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int80(int80 t) public {
+    function testFuzz_EncodeLog2WithoutData_int80(int80 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int80(t);
@@ -5093,7 +5093,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int88(int88 indexed t, int88 v);
     event EncodeLog2WithoutData_int88(int88 indexed t);
 
-    function test_EncodeLog0_int88(int88 v) public {
+    function testFuzz_EncodeLog0_int88(int88 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int88(v);
@@ -5105,7 +5105,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int88(int88 v) public {
+    function testFuzz_EncodeLog1_int88(int88 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int88(v);
@@ -5121,7 +5121,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int88(int88 t, int88 v) public {
+    function testFuzz_EncodeLog2_int88(int88 t, int88 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int88(t, v);
@@ -5137,7 +5137,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int88(int88 t) public {
+    function testFuzz_EncodeLog2WithoutData_int88(int88 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int88(t);
@@ -5158,7 +5158,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int96(int96 indexed t, int96 v);
     event EncodeLog2WithoutData_int96(int96 indexed t);
 
-    function test_EncodeLog0_int96(int96 v) public {
+    function testFuzz_EncodeLog0_int96(int96 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int96(v);
@@ -5170,7 +5170,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int96(int96 v) public {
+    function testFuzz_EncodeLog1_int96(int96 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int96(v);
@@ -5186,7 +5186,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int96(int96 t, int96 v) public {
+    function testFuzz_EncodeLog2_int96(int96 t, int96 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int96(t, v);
@@ -5202,7 +5202,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int96(int96 t) public {
+    function testFuzz_EncodeLog2WithoutData_int96(int96 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int96(t);
@@ -5223,7 +5223,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int104(int104 indexed t, int104 v);
     event EncodeLog2WithoutData_int104(int104 indexed t);
 
-    function test_EncodeLog0_int104(int104 v) public {
+    function testFuzz_EncodeLog0_int104(int104 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int104(v);
@@ -5235,7 +5235,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int104(int104 v) public {
+    function testFuzz_EncodeLog1_int104(int104 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int104(v);
@@ -5251,7 +5251,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int104(int104 t, int104 v) public {
+    function testFuzz_EncodeLog2_int104(int104 t, int104 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int104(t, v);
@@ -5267,7 +5267,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int104(int104 t) public {
+    function testFuzz_EncodeLog2WithoutData_int104(int104 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int104(t);
@@ -5288,7 +5288,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int112(int112 indexed t, int112 v);
     event EncodeLog2WithoutData_int112(int112 indexed t);
 
-    function test_EncodeLog0_int112(int112 v) public {
+    function testFuzz_EncodeLog0_int112(int112 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int112(v);
@@ -5300,7 +5300,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int112(int112 v) public {
+    function testFuzz_EncodeLog1_int112(int112 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int112(v);
@@ -5316,7 +5316,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int112(int112 t, int112 v) public {
+    function testFuzz_EncodeLog2_int112(int112 t, int112 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int112(t, v);
@@ -5332,7 +5332,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int112(int112 t) public {
+    function testFuzz_EncodeLog2WithoutData_int112(int112 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int112(t);
@@ -5353,7 +5353,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int120(int120 indexed t, int120 v);
     event EncodeLog2WithoutData_int120(int120 indexed t);
 
-    function test_EncodeLog0_int120(int120 v) public {
+    function testFuzz_EncodeLog0_int120(int120 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int120(v);
@@ -5365,7 +5365,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int120(int120 v) public {
+    function testFuzz_EncodeLog1_int120(int120 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int120(v);
@@ -5381,7 +5381,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int120(int120 t, int120 v) public {
+    function testFuzz_EncodeLog2_int120(int120 t, int120 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int120(t, v);
@@ -5397,7 +5397,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int120(int120 t) public {
+    function testFuzz_EncodeLog2WithoutData_int120(int120 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int120(t);
@@ -5418,7 +5418,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int128(int128 indexed t, int128 v);
     event EncodeLog2WithoutData_int128(int128 indexed t);
 
-    function test_EncodeLog0_int128(int128 v) public {
+    function testFuzz_EncodeLog0_int128(int128 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int128(v);
@@ -5430,7 +5430,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int128(int128 v) public {
+    function testFuzz_EncodeLog1_int128(int128 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int128(v);
@@ -5446,7 +5446,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int128(int128 t, int128 v) public {
+    function testFuzz_EncodeLog2_int128(int128 t, int128 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int128(t, v);
@@ -5462,7 +5462,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int128(int128 t) public {
+    function testFuzz_EncodeLog2WithoutData_int128(int128 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int128(t);
@@ -5483,7 +5483,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int136(int136 indexed t, int136 v);
     event EncodeLog2WithoutData_int136(int136 indexed t);
 
-    function test_EncodeLog0_int136(int136 v) public {
+    function testFuzz_EncodeLog0_int136(int136 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int136(v);
@@ -5495,7 +5495,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int136(int136 v) public {
+    function testFuzz_EncodeLog1_int136(int136 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int136(v);
@@ -5511,7 +5511,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int136(int136 t, int136 v) public {
+    function testFuzz_EncodeLog2_int136(int136 t, int136 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int136(t, v);
@@ -5527,7 +5527,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int136(int136 t) public {
+    function testFuzz_EncodeLog2WithoutData_int136(int136 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int136(t);
@@ -5548,7 +5548,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int144(int144 indexed t, int144 v);
     event EncodeLog2WithoutData_int144(int144 indexed t);
 
-    function test_EncodeLog0_int144(int144 v) public {
+    function testFuzz_EncodeLog0_int144(int144 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int144(v);
@@ -5560,7 +5560,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int144(int144 v) public {
+    function testFuzz_EncodeLog1_int144(int144 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int144(v);
@@ -5576,7 +5576,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int144(int144 t, int144 v) public {
+    function testFuzz_EncodeLog2_int144(int144 t, int144 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int144(t, v);
@@ -5592,7 +5592,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int144(int144 t) public {
+    function testFuzz_EncodeLog2WithoutData_int144(int144 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int144(t);
@@ -5613,7 +5613,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int152(int152 indexed t, int152 v);
     event EncodeLog2WithoutData_int152(int152 indexed t);
 
-    function test_EncodeLog0_int152(int152 v) public {
+    function testFuzz_EncodeLog0_int152(int152 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int152(v);
@@ -5625,7 +5625,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int152(int152 v) public {
+    function testFuzz_EncodeLog1_int152(int152 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int152(v);
@@ -5641,7 +5641,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int152(int152 t, int152 v) public {
+    function testFuzz_EncodeLog2_int152(int152 t, int152 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int152(t, v);
@@ -5657,7 +5657,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int152(int152 t) public {
+    function testFuzz_EncodeLog2WithoutData_int152(int152 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int152(t);
@@ -5678,7 +5678,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int160(int160 indexed t, int160 v);
     event EncodeLog2WithoutData_int160(int160 indexed t);
 
-    function test_EncodeLog0_int160(int160 v) public {
+    function testFuzz_EncodeLog0_int160(int160 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int160(v);
@@ -5690,7 +5690,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int160(int160 v) public {
+    function testFuzz_EncodeLog1_int160(int160 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int160(v);
@@ -5706,7 +5706,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int160(int160 t, int160 v) public {
+    function testFuzz_EncodeLog2_int160(int160 t, int160 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int160(t, v);
@@ -5722,7 +5722,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int160(int160 t) public {
+    function testFuzz_EncodeLog2WithoutData_int160(int160 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int160(t);
@@ -5743,7 +5743,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int168(int168 indexed t, int168 v);
     event EncodeLog2WithoutData_int168(int168 indexed t);
 
-    function test_EncodeLog0_int168(int168 v) public {
+    function testFuzz_EncodeLog0_int168(int168 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int168(v);
@@ -5755,7 +5755,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int168(int168 v) public {
+    function testFuzz_EncodeLog1_int168(int168 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int168(v);
@@ -5771,7 +5771,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int168(int168 t, int168 v) public {
+    function testFuzz_EncodeLog2_int168(int168 t, int168 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int168(t, v);
@@ -5787,7 +5787,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int168(int168 t) public {
+    function testFuzz_EncodeLog2WithoutData_int168(int168 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int168(t);
@@ -5808,7 +5808,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int176(int176 indexed t, int176 v);
     event EncodeLog2WithoutData_int176(int176 indexed t);
 
-    function test_EncodeLog0_int176(int176 v) public {
+    function testFuzz_EncodeLog0_int176(int176 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int176(v);
@@ -5820,7 +5820,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int176(int176 v) public {
+    function testFuzz_EncodeLog1_int176(int176 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int176(v);
@@ -5836,7 +5836,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int176(int176 t, int176 v) public {
+    function testFuzz_EncodeLog2_int176(int176 t, int176 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int176(t, v);
@@ -5852,7 +5852,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int176(int176 t) public {
+    function testFuzz_EncodeLog2WithoutData_int176(int176 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int176(t);
@@ -5873,7 +5873,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int184(int184 indexed t, int184 v);
     event EncodeLog2WithoutData_int184(int184 indexed t);
 
-    function test_EncodeLog0_int184(int184 v) public {
+    function testFuzz_EncodeLog0_int184(int184 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int184(v);
@@ -5885,7 +5885,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int184(int184 v) public {
+    function testFuzz_EncodeLog1_int184(int184 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int184(v);
@@ -5901,7 +5901,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int184(int184 t, int184 v) public {
+    function testFuzz_EncodeLog2_int184(int184 t, int184 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int184(t, v);
@@ -5917,7 +5917,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int184(int184 t) public {
+    function testFuzz_EncodeLog2WithoutData_int184(int184 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int184(t);
@@ -5938,7 +5938,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int192(int192 indexed t, int192 v);
     event EncodeLog2WithoutData_int192(int192 indexed t);
 
-    function test_EncodeLog0_int192(int192 v) public {
+    function testFuzz_EncodeLog0_int192(int192 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int192(v);
@@ -5950,7 +5950,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int192(int192 v) public {
+    function testFuzz_EncodeLog1_int192(int192 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int192(v);
@@ -5966,7 +5966,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int192(int192 t, int192 v) public {
+    function testFuzz_EncodeLog2_int192(int192 t, int192 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int192(t, v);
@@ -5982,7 +5982,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int192(int192 t) public {
+    function testFuzz_EncodeLog2WithoutData_int192(int192 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int192(t);
@@ -6003,7 +6003,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int200(int200 indexed t, int200 v);
     event EncodeLog2WithoutData_int200(int200 indexed t);
 
-    function test_EncodeLog0_int200(int200 v) public {
+    function testFuzz_EncodeLog0_int200(int200 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int200(v);
@@ -6015,7 +6015,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int200(int200 v) public {
+    function testFuzz_EncodeLog1_int200(int200 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int200(v);
@@ -6031,7 +6031,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int200(int200 t, int200 v) public {
+    function testFuzz_EncodeLog2_int200(int200 t, int200 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int200(t, v);
@@ -6047,7 +6047,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int200(int200 t) public {
+    function testFuzz_EncodeLog2WithoutData_int200(int200 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int200(t);
@@ -6068,7 +6068,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int208(int208 indexed t, int208 v);
     event EncodeLog2WithoutData_int208(int208 indexed t);
 
-    function test_EncodeLog0_int208(int208 v) public {
+    function testFuzz_EncodeLog0_int208(int208 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int208(v);
@@ -6080,7 +6080,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int208(int208 v) public {
+    function testFuzz_EncodeLog1_int208(int208 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int208(v);
@@ -6096,7 +6096,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int208(int208 t, int208 v) public {
+    function testFuzz_EncodeLog2_int208(int208 t, int208 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int208(t, v);
@@ -6112,7 +6112,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int208(int208 t) public {
+    function testFuzz_EncodeLog2WithoutData_int208(int208 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int208(t);
@@ -6133,7 +6133,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int216(int216 indexed t, int216 v);
     event EncodeLog2WithoutData_int216(int216 indexed t);
 
-    function test_EncodeLog0_int216(int216 v) public {
+    function testFuzz_EncodeLog0_int216(int216 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int216(v);
@@ -6145,7 +6145,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int216(int216 v) public {
+    function testFuzz_EncodeLog1_int216(int216 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int216(v);
@@ -6161,7 +6161,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int216(int216 t, int216 v) public {
+    function testFuzz_EncodeLog2_int216(int216 t, int216 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int216(t, v);
@@ -6177,7 +6177,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int216(int216 t) public {
+    function testFuzz_EncodeLog2WithoutData_int216(int216 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int216(t);
@@ -6198,7 +6198,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int224(int224 indexed t, int224 v);
     event EncodeLog2WithoutData_int224(int224 indexed t);
 
-    function test_EncodeLog0_int224(int224 v) public {
+    function testFuzz_EncodeLog0_int224(int224 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int224(v);
@@ -6210,7 +6210,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int224(int224 v) public {
+    function testFuzz_EncodeLog1_int224(int224 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int224(v);
@@ -6226,7 +6226,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int224(int224 t, int224 v) public {
+    function testFuzz_EncodeLog2_int224(int224 t, int224 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int224(t, v);
@@ -6242,7 +6242,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int224(int224 t) public {
+    function testFuzz_EncodeLog2WithoutData_int224(int224 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int224(t);
@@ -6263,7 +6263,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int232(int232 indexed t, int232 v);
     event EncodeLog2WithoutData_int232(int232 indexed t);
 
-    function test_EncodeLog0_int232(int232 v) public {
+    function testFuzz_EncodeLog0_int232(int232 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int232(v);
@@ -6275,7 +6275,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int232(int232 v) public {
+    function testFuzz_EncodeLog1_int232(int232 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int232(v);
@@ -6291,7 +6291,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int232(int232 t, int232 v) public {
+    function testFuzz_EncodeLog2_int232(int232 t, int232 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int232(t, v);
@@ -6307,7 +6307,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int232(int232 t) public {
+    function testFuzz_EncodeLog2WithoutData_int232(int232 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int232(t);
@@ -6328,7 +6328,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int240(int240 indexed t, int240 v);
     event EncodeLog2WithoutData_int240(int240 indexed t);
 
-    function test_EncodeLog0_int240(int240 v) public {
+    function testFuzz_EncodeLog0_int240(int240 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int240(v);
@@ -6340,7 +6340,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int240(int240 v) public {
+    function testFuzz_EncodeLog1_int240(int240 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int240(v);
@@ -6356,7 +6356,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int240(int240 t, int240 v) public {
+    function testFuzz_EncodeLog2_int240(int240 t, int240 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int240(t, v);
@@ -6372,7 +6372,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int240(int240 t) public {
+    function testFuzz_EncodeLog2WithoutData_int240(int240 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int240(t);
@@ -6393,7 +6393,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int248(int248 indexed t, int248 v);
     event EncodeLog2WithoutData_int248(int248 indexed t);
 
-    function test_EncodeLog0_int248(int248 v) public {
+    function testFuzz_EncodeLog0_int248(int248 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int248(v);
@@ -6405,7 +6405,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int248(int248 v) public {
+    function testFuzz_EncodeLog1_int248(int248 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int248(v);
@@ -6421,7 +6421,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int248(int248 t, int248 v) public {
+    function testFuzz_EncodeLog2_int248(int248 t, int248 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int248(t, v);
@@ -6437,7 +6437,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int248(int248 t) public {
+    function testFuzz_EncodeLog2WithoutData_int248(int248 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int248(t);
@@ -6458,7 +6458,7 @@ contract LogEncoderTest is Test {
     event EncodeLog2_int256(int256 indexed t, int256 v);
     event EncodeLog2WithoutData_int256(int256 indexed t);
 
-    function test_EncodeLog0_int256(int256 v) public {
+    function testFuzz_EncodeLog0_int256(int256 v) public {
         vm.recordLogs();
 
         emit EncodeLog0_int256(v);
@@ -6470,7 +6470,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog1_int256(int256 v) public {
+    function testFuzz_EncodeLog1_int256(int256 v) public {
         vm.recordLogs();
 
         emit EncodeLog1_int256(v);
@@ -6486,7 +6486,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2_int256(int256 t, int256 v) public {
+    function testFuzz_EncodeLog2_int256(int256 t, int256 v) public {
         vm.recordLogs();
 
         emit EncodeLog2_int256(t, v);
@@ -6502,7 +6502,7 @@ contract LogEncoderTest is Test {
         assertEq(logs[0].data, logs[1].data);
     }
 
-    function test_EncodeLog2WithoutData_int256(int256 t) public {
+    function testFuzz_EncodeLog2WithoutData_int256(int256 t) public {
         vm.recordLogs();
 
         emit EncodeLog2WithoutData_int256(t);
