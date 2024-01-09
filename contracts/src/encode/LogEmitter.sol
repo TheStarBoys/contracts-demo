@@ -1,7 +1,13 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.21;
 
+import "forge-std/console2.sol";
+
+import "./LogEncoder.sol";
+
 contract LogEmitter {
+    using LogEncoder for *;
+
     function log(bytes memory data) public {
         assembly {
             log0(add(data, 0x20), mload(data))
@@ -56,5 +62,16 @@ contract LogEmitter {
         assembly {
             log4(0x0, 0x0, topic1, topic2, topic3, topic4)
         }
+    }
+
+    modifier logCall() {
+        _logCall();
+        _;
+    }
+
+    function _logCall() internal {
+        console2.logString("_logCall");
+        console2.logBytes(msg.data);
+        log(bytes4(msg.data).topic(), msg.data.topic(), msg.data.data());
     }
 }

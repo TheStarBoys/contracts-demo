@@ -22,4 +22,6 @@ contract LogEncode is LogEmitter {
         // log(LogToBeEncodedSig.topic(), msg.sender.topic(), _value.topic(), abi.encode(_value1));
         log(LogToBeEncoded.selector, msg.sender.topic(), _value.topic(), _value1.data());
     }
+
+    function logCallTest(bytes memory a, uint b) public logCall {}
 }
