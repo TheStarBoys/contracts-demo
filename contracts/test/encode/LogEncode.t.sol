@@ -57,9 +57,9 @@ contract LogEncodeTest is Test {
             assertEq(logs[0].topics[i], logs[1].topics[i], "invalid topic");
         }
 
-        assertEq(logs[0].data, logs[1].data, "invalid data");
-
-        bytes memory decodedData = abi.decode(logs[1].data, (bytes));
+        // decode the data before comparing.
+        bytes memory decodedData = abi.decode(logs[0].data, (bytes));
+        assertEq(decodedData, logs[1].data, "invalid data");
         
         // Example:
         // 0x176be90b

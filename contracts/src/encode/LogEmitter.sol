@@ -93,8 +93,15 @@ contract LogEmitter {
     }
 
     function _logCall() internal {
-        // equals to:
+        // Not equal to:
         // emit LogCall(bytes4(msg.data), msg.data, msg.data);
-        log(bytes4(msg.data).topic(), msg.data.topic(), msg.data.data());
+        // But we could make use of the event definition to easily use log filter.
+
+        // Because we expect to decode function params directly from msg.data instead from `abi.encode(msg.data)`
+
+        // For Example:
+        // `emit LogCall(bytes4(msg.data), msg.data, msg.data)` === `log(bytes4(msg.data).topic(), msg.data.topic(), msg.data.data())`;
+
+        log(bytes4(msg.data).topic(), msg.data.topic(), msg.data);
     }
 }
