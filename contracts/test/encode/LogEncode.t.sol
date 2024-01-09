@@ -11,7 +11,8 @@ contract LogEncodeTest is Test {
     LogEncode logEncode;
 
     event LogToBeEncoded(address indexed sender, string indexed value, uint256 value1);
-    event LogCall(bytes4 indexed selector, bytes indexed dataTopic, bytes data) anonymous; // anonymous `LogCall` for general log encoding.
+    event LogCall(bytes4 indexed selector, bytes indexed dataTopic, bytes data) anonymous; // anonymous `LogCall` for encoding/decoding general log.
+    event LogCallTest(bytes4 indexed selector, bytes indexed dataTopic, bytes a, uint b) anonymous; // anonymous `LogCallTest` for encoding/decoding specific function call
 
     function setUp() public {
         logEncode = new LogEncode();
@@ -42,24 +43,26 @@ contract LogEncodeTest is Test {
     }
 
     function testFuzz_LogCall(bytes memory a, uint b) public {
-        bytes memory data = abi.encodeWithSelector(logEncode.logCallTest.selector, a, b);
+        bytes memory data = abi.encode(a, b);
 
         vm.recordLogs();
 
         // A general event like:
         emit LogCall(logEncode.logCallTest.selector, data, data);
-
+        emit LogCallTest(logEncode.logCallTest.selector, data, a, b);
         logEncode.logCallTest(a, b);
 
         Vm.Log[] memory logs = vm.getRecordedLogs();
-        assertEq(logs.length, 2);
+        assertEq(logs.length, 3);
         for (uint i; i < logs[0].topics.length; i++) {
-            assertEq(logs[0].topics[i], logs[1].topics[i], "invalid topic");
+            assertEq(logs[0].topics[i], logs[1].topics[i], "invalid topic #0");
+            assertEq(logs[0].topics[i], logs[2].topics[i], "invalid topic #1");
         }
 
         // decode the data before comparing.
         bytes memory decodedData = abi.decode(logs[0].data, (bytes));
-        assertEq(decodedData, logs[1].data, "invalid data");
+        assertEq(decodedData, logs[1].data, "invalid data #0");
+        assertEq(decodedData, logs[2].data, "invalid data #1");
         
         // Example:
         // 0x176be90b
@@ -68,12 +71,7 @@ contract LogEncodeTest is Test {
         // 0000000000000000000000000000000000000000000000000000000000000003
         // 1234560000000000000000000000000000000000000000000000000000000000
 
-        bytes4 decodedSelector = bytes4(decodedData);
-
-        decodedData = _removeSelectorFromBytes(decodedData);
-
         (bytes memory decodedA, uint decodedB) = abi.decode(decodedData, (bytes, uint));
-        assertEq(decodedSelector, logEncode.logCallTest.selector, "invalid selector");
         assertEq(decodedA, a, "invalid a");
         assertEq(decodedB, b, "invalid b");
     }

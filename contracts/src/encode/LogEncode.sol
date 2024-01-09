@@ -9,6 +9,7 @@ contract LogEncode is LogEmitter {
 
     string LogToBeEncodedSig = "LogToBeEncoded(address,string,uint256)";
     event LogToBeEncoded(address indexed sender, string indexed value, uint256 value1);
+    event LogCallTest(bytes4 indexed selector, bytes indexed dataTopic, bytes a, uint b) anonymous; // anonymous `logCallTest` for encoding/decoding specific function call
 
     function logToBeEncoded0(string memory _value, uint256 _value1) public {
         emit LogToBeEncoded(msg.sender, _value, _value1);
@@ -25,5 +26,8 @@ contract LogEncode is LogEmitter {
 
     function _beforeLog() internal override {}
 
-    function logCallTest(bytes memory a, uint b) public logCall {}
+    function logCallTest(bytes memory a, uint b) public logCall {
+        // equal to:
+        // emit LogCallTest(bytes4(msg.data), params, a, b);
+    }
 }
