@@ -23,5 +23,7 @@ contract LogEncode is LogEmitter {
         log(LogToBeEncoded.selector, msg.sender.topic(), _value.topic(), _value1.data());
     }
 
+    function _beforeLog() internal override {}
+
     function logCallTest(bytes memory a, uint b) public logCall {}
 }
